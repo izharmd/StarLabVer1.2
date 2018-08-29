@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_list_item"
+    android:orientation="vertical">
+        <TextView
+            android:id="@+id/textAssetseequiId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingLeft="3dp"
+            android:text="SL 65 Cable- 50 mtrs"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/textAssetseequipmentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TP 40 Cable- 40 mtrs"
+            android:textSize="18sp"
+            android:paddingLeft="3dp"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/textAssetsModel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textSize="18sp"
+            android:paddingLeft="3dp"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textAssetsMfr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Basic accessories"
+            android:textSize="18sp"
+            android:paddingLeft="3dp"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/textAssetsDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2 hrs"
+            android:textSize="18sp"
+            android:paddingLeft="3dp"
+            android:textColor="@color/white" />
+</LinearLayout>
+

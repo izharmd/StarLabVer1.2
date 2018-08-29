@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="0dp"
+    android:background="@color/white"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center|left"
+                    android:paddingLeft="0dp"
+                    android:text="TECHNICIAN REPORT (for office use only)"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Technician(s) attended (initials)" />
+
+                <LinearLayout
+                    style="@style/ll_Steps"
+                    android:weightSum="4">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="1"
+                        android:text="1." />
+
+                    <EditText
+                        android:id="@+id/editTecOne"
+                        style="@style/Text_view_Steps1"
+                        android:layout_weight="1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="1"
+                        android:text="2."
+                        android:paddingLeft="10dp"/>
+
+                    <EditText
+                        android:id="@+id/editTecTwo"
+                        style="@style/Text_view_Steps1"
+                        android:layout_weight="1"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/ll_Steps"
+                    android:weightSum="4">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="1"
+                        android:text="3." />
+
+                    <EditText
+                        android:id="@+id/editTecThree"
+                        style="@style/Text_view_Steps1"
+                        android:layout_weight="1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="1"
+                        android:text="4."
+                        android:paddingLeft="10dp"/>
+
+                    <EditText
+                        android:id="@+id/editTecFour"
+                        style="@style/Text_view_Steps1"
+                        android:layout_weight="1"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="No. of pipettes serviced on-site" />
+
+
+                <LinearLayout
+                    style="@style/ll_Steps"
+                    android:weightSum="4">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="1"
+                        android:text="Single :" />
+
+                    <EditText
+                        android:id="@+id/editPepptOne"
+                        style="@style/Text_view_Steps1"
+                        android:layout_weight="1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="1"
+                        android:text="8-ch :"
+                        android:paddingLeft="10dp"/>
+
+                    <EditText
+                        android:id="@+id/editPepptTwo"
+                        style="@style/Text_view_Steps1"
+                        android:layout_weight="1"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/ll_Steps"
+                    android:weightSum="4">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="1"
+                        android:text="12-ch :" />
+
+                    <EditText
+                        android:id="@+id/editPepptThree"
+                        style="@style/Text_view_Steps1"
+                        android:layout_weight="1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="1"
+                        android:text="other :"
+                        android:paddingLeft="10dp"/>
+
+                    <EditText
+                        android:id="@+id/editPepptfour"
+                        style="@style/Text_view_Steps1"
+                        android:layout_weight="1"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="No. of pipettes returned to lab" />
+
+
+                <LinearLayout
+                    style="@style/ll_Steps"
+                    android:weightSum="4">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="1"
+                        android:text="Single :" />
+
+                    <EditText
+                        android:id="@+id/editPepptLabOne"
+                        style="@style/Text_view_Steps1"
+                        android:layout_weight="1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="1"
+                        android:text="8-ch :"
+                        android:paddingLeft="10dp"/>
+
+                    <EditText
+                        android:id="@+id/editPepptLabTwo"
+                        style="@style/Text_view_Steps1"
+                        android:layout_weight="1"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/ll_Steps"
+                    android:weightSum="4">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="1"
+                        android:text="12-ch :" />
+
+                    <EditText
+                        android:id="@+id/editPepptLabThree"
+                        style="@style/Text_view_Steps1"
+                        android:layout_weight="1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="1"
+                        android:text="other :"
+                        android:paddingLeft="10dp"/>
+
+                    <EditText
+                        android:id="@+id/editPepptLabFour"
+                        style="@style/Text_view_Steps1"
+                        android:layout_weight="1"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Comments (location, state of pipettes, positives, negatives etc)" />
+
+                <EditText
+                    android:id="@+id/editComment"
+                    style="@style/Text_view_Steps1"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:gravity="left"
+                    android:layout_marginTop="10dp" />
+
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Recommendations for next clinic (for customer or account manager)" />
+
+                <EditText
+                    android:id="@+id/editRecomendation"
+                    style="@style/Text_view_Steps1"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:gravity="left"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Customer happy to pre-book next clinic?" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:weightSum="2">
+
+                    <RadioButton
+                        android:id="@+id/rdYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/rdNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="No" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="*Similar dates will be allocated unless specified" />
+
+                <EditText
+                    android:id="@+id/editSimilar"
+                    style="@style/Text_view_Steps1"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="left"
+                    android:layout_marginTop="10dp" />
+                <Button
+                    android:id="@+id/btnSaveReport"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/round_button"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="20dp"
+                    android:text="Save"/>
+            </LinearLayout>
+
+
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

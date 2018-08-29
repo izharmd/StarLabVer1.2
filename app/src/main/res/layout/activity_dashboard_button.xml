@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_gray_bg"></View>
+
+    <LinearLayout
+        android:id="@+id/ll_MyJob"
+        style="@style/dashboard_LinerLayout">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:src="@mipmap/ic_job" />
+
+        <TextView
+            style="@style/dashboard_logo_Text"
+            android:text="My Jobs" />
+    </LinearLayout>
+
+    <View style="@style/dashboard_View"></View>
+
+    <LinearLayout
+        android:id="@+id/ll_assets"
+        style="@style/dashboard_LinerLayout">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:src="@mipmap/ic_assets" />
+
+        <TextView
+            style="@style/dashboard_logo_Text"
+            android:text="Assets" />
+    </LinearLayout>
+
+    <View style="@style/dashboard_View"></View>
+
+    <LinearLayout
+        android:id="@+id/ll_mycalender"
+        style="@style/dashboard_LinerLayout">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:src="@mipmap/ic_my_calender" />
+
+        <TextView
+            style="@style/dashboard_logo_Text"
+            android:text="My Calendar" />
+    </LinearLayout>
+
+    <View style="@style/dashboard_View"></View>
+
+    <LinearLayout
+        android:id="@+id/ll_notification"
+        style="@style/dashboard_LinerLayout">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:src="@mipmap/ic_notification"
+            android:id="@+id/imageView" />
+<!--
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".6"
+                android:src="@mipmap/ic_notification"
+                android:id="@+id/imageView" />
+
+
+            <TextView
+                android:id="@+id/textNotificationCount"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignEnd="@+id/imageView"
+                android:layout_alignParentTop="true"
+                android:layout_alignRight="@+id/imageView"
+                android:text="1"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+
+                android:background="@drawable/round_circle_notification"
+                android:visibility="visible"/>
+
+        </RelativeLayout>
+-->
+
+        <TextView
+            style="@style/dashboard_logo_Text"
+            android:text="Notification" />
+    </LinearLayout>
+
+    <View style="@style/dashboard_View"></View>
+
+    <LinearLayout
+        style="@style/dashboard_LinerLayout"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:src="@mipmap/ic_create_job" />
+
+        <TextView
+            style="@style/dashboard_logo_Text"
+            android:text="My Account" />
+    </LinearLayout>
+
+    <View
+        style="@style/dashboard_View"
+        android:visibility="gone"></View>
+
+    <!--
+        <View style="@style/dashboard_View"></View>-->
+
+</LinearLayout>

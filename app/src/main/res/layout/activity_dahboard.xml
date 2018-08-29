@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include
+            layout="@layout/header_username_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_dashboard_header"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="My Dashboard"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight=".6"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_dashboard"
+                android:visibility="gone"/>
+
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/ll_MyAccount"
+            layout="@layout/activity_dashboard_button" />
+
+        <!--<TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/color_green_bg"
+            android:gravity="center|left"
+            android:paddingLeft="20dp"
+            android:textSize="18sp"
+            android:text="Recent  Activities"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="3.5"
+                android:paddingLeft="10dp"
+                android:textStyle="bold"
+                android:text="Strategic Installation- Sorrin Appartments"
+                android:textColor="@color/colorBlack" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".5"
+                android:layout_marginRight="5dp"
+                android:src="@mipmap/ic_recent_arrow" />
+        </LinearLayout>
+
+        <View style="@style/dashboard_View"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="3.5"
+                android:paddingLeft="10dp"
+                android:textStyle="bold"
+                android:text="Schedule Maintenance- Candice store"
+                android:textColor="@color/colorBlack" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".5"
+                android:layout_marginRight="5dp"
+                android:src="@mipmap/ic_recent_arrow" />
+        </LinearLayout>
+
+        <View style="@style/dashboard_View"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="3.5"
+                android:paddingLeft="10dp"
+                android:textStyle="bold"
+                android:text="Service Timesheet- Europa Logistics"
+                android:textColor="@color/colorBlack" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".5"
+                android:layout_marginRight="5dp"
+                android:src="@mipmap/ic_recent_arrow" />
+        </LinearLayout>
+
+        <View style="@style/dashboard_View"></View>-->
+
+
+    </LinearLayout>
+</ScrollView>

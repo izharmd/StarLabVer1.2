@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:background="@color/lightgray"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="none">
+            <!--================================================================-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center|left"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Customer details"
+                        android:textColor="@color/black"
+                        android:background="@color/stepHeader_bg"
+                        android:textSize="16sp"
+                        android:visibility="gone"/>
+
+                <LinearLayout
+                    style="@style/ll_Steps"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Work Order No:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:singleLine="true"
+                        android:text="Account Manager:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Key Contact:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Email:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Lab Contact:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Email:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:singleLine="true"
+                        android:text="Purchasing Contact:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Email:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Company:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Department:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/ll_Steps"
+                    android:layout_height="80dp">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Address:" />
+
+                    <TextView
+                        style="@style/Text_view_Steps1"
+                        android:layout_height="80dp" />
+                </LinearLayout>
+
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="PO no:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Date:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Telephone:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Mobile:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Telephone:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Mobile:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Telephone:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Account No:" />
+
+                    <TextView style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/ll_Steps"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Postcode:" />
+
+                    <TextView
+                        style="@style/Text_view_Steps1"
+                        android:layout_height="80dp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

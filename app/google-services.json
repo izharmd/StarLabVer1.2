@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "180813183357",
+    "firebase_url": "https://starlab-1eb94.firebaseio.com",
+    "project_id": "starlab-1eb94",
+    "storage_bucket": "starlab-1eb94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180813183357:android:210b9c59bd5b21b3",
+        "android_client_info": {
+          "package_name": "com.bws.starlab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180813183357-hk3vfvfpin1c5bqgej55udlcmn1n7fm6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8MiIU8-EePaGANUnB6pnxVcyjqXg4M0s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

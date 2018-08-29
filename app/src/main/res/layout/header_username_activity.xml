@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:orientation="horizontal"
+    android:weightSum="6">
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:src="@mipmap/logo_132"
+            android:layout_gravity="center"/>
+
+
+
+            <TextView
+                android:id="@+id/textFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Devid Miller"
+                android:textSize="16sp"
+                android:layout_weight="4"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp" />
+
+
+
+
+        <ImageView
+            android:id="@+id/imv_Shutdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_power"/>
+
+
+
+</LinearLayout>

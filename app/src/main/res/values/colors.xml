@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBlack">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="colorHeaderText">#cc7d3d</color>
+    <color name="color_orange_Bg">#cc7d3d</color>
+    <color name="color_yellow_Bg">#fbba00</color>
+    <color name="color_gray_bg">#d9d9d9</color>
+    <color name="color_green_bg">#77933c</color>
+    <color name="spinner_Bg">#dcdcdc</color>
+    <color name="color_btn_Bg">#003a6c</color>
+
+    <color name="today">#4b82ff</color>
+    <color name="greyed_out">#c7c7c7</color>
+
+    <color name="summer">#44eebd82</color>
+    <color name="fall">#44d8d27e</color>
+    <color name="winter">#a1c1da</color>
+    <color name="spring">#448da64b</color>
+
+
+    <color name="black">#000000</color>
+    <color name="symptom_color_selected">#003366</color>
+    <color name="reaction_color_selected">#003366</color>
+    <color name="static_text_color">#003366</color>
+    <color name="journal_entry_listitem_text_color">#003366</color>
+    <color name="note_text_disabled">#333333</color>
+    <color name="blue">#004f92</color>
+    <color name="navy">#6699FF</color>
+    <color name="sky">#0099CC</color>
+    <color name="gray">#808080</color>
+    <color name="lightgray">#e7e7e7</color>
+    <color name="lightgray02">#bfbfbf</color>
+    <color name="dark">#000015</color>
+    <color name="lightgreen">#336666</color>
+    <color name="orrange">#e33d1b</color>
+    <color name="darkorrange">#cc2303</color>
+    <color name="notification_header">#4f6228</color>
+    <color name="notification_bg">#77933c</color>
+    <color name="stepHeader_bg">#77933c</color>
+    <color name="calender_bg">#f8f8f8</color>
+    <color name="calender_view_bg">#e0e0e0</color>
+    <color name="calender_cell_bg">#f8f8f8</color>
+    <color name="calender_blue_bg">#18aef8</color>
+
+
+
+
+    <color name="alphabetwhite">#a6a1a2</color>
+    <color name="QRwhite">#ffffff</color>
+    <color name="QRBlack">#000000</color>
+    <color name="BtnColor">#2baece</color>
+</resources>

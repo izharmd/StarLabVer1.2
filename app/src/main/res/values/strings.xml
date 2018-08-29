@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">StarLab</string>
+
+    <string name="forgetpassword"><u>Forgot password?</u></string>
+    <string name="strDetailsStep3">IMPORTANT: Clinic dates QUANTITY of pipettes: /duration dependent on the number of pipettes to be serviced. Therefore, the quantities noted above must be accurate otherwise STARLAB cannot guarantee the servicing of any pipettes above the numbers stated within the allotted clinic timeframe.</string>
+    <string name="step4">There is a sturdy table with leg room. The location has no through traffic or is in a busy lab. It is a vibration and draught free environment, with a temperature range of 17°C to 25°C. I understand that I may be charged for any technician/clinic time lost due to these conditions not being met.</string>
+    <string name="step5">Certificates will be provided on a USB memory stick at the end of the clinic. Please tick if for IT security reasons you will provide your own USB stick:</string>
+    <string name="step4a">25°C. I understand that I may be charged for any technician/clinic time lost due to these conditions not being met.</string>
+    <string name="Pay_Display">Pay &amp; Display 1 Cost of parking: £7.00 for the day I think, but bring extra in case, use any hospital car park, I’ve always found that car park 4 (right of the roundabout and up the hill) is the best one for space)</string>
+    <string name="notification">Change in schedule for maintenance activity New schedule maintenance at 4:30 p.m.......</string>
+</resources>

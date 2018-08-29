@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFffff"
+    android:clickable="true"
+    android:gravity="center"
+
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/stepHeader_bg"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:text="Customer details"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                style="@style/ll_Steps"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Work Order No:" />
+
+                <TextView
+                    android:id="@+id/textWorkOrderNo"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:singleLine="true"
+                    android:text="Account Manager:" />
+
+                <TextView
+                    android:id="@+id/textAccountManager"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Key Contact:" />
+
+                <TextView
+                    android:id="@+id/textMyContact"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Email:" />
+
+                <TextView
+                    android:id="@+id/textKeyEmail"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="PO no:" />
+
+                <TextView
+                    android:id="@+id/textPoNo"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Date:" />
+
+                <TextView
+                    android:id="@+id/textDate"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Telephone:" />
+
+                <TextView
+                    android:id="@+id/textKeyTelephone"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Mobile:" />
+
+                <TextView
+                    android:id="@+id/textkeyMobile"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Lab Contact:" />
+
+                <TextView
+                    android:id="@+id/textLabContact"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Email:" />
+
+                <TextView
+                    android:id="@+id/textLabEmail"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Telephone:" />
+
+                <TextView
+                    android:id="@+id/textLabTelephone"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Mobile:" />
+
+                <TextView
+                    android:id="@+id/textLabMobile"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:singleLine="true"
+                    android:text="Purchasing Contact:" />
+
+                <TextView
+                    android:id="@+id/textPurchasingContact"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Email:" />
+
+                <TextView
+                    android:id="@+id/textPurchasingEmail"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Company:" />
+
+                <TextView
+                    android:id="@+id/textCompany"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Department:" />
+
+                <TextView
+                    android:id="@+id/textDepartment"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/ll_Steps"
+                android:layout_height="120dp">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Address:" />
+
+                <TextView
+                    android:id="@+id/textAddress"
+                    style="@style/Text_view_Steps1"
+                    android:gravity="left"
+                    android:layout_height="120dp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout style="@style/ll_Steps">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Account No:" />
+
+                <TextView
+                    android:id="@+id/textAccountNo"
+                    style="@style/Text_view_Steps1" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ll_Steps"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:text="Postcode:" />
+
+                <TextView
+                    android:id="@+id/textPostCode"
+                    style="@style/Text_view_Steps1"
+                    android:gravity="left"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="What is the LOCATION of the clinic (building, level, room no. etc)" />
+
+        <TextView
+            android:id="@+id/textLocationClinic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_steps"
+            android:gravity="left"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+
+
+        <TextView
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Each technician requires 2m of BENCH SPACE with leg room: How many techs will the above location accommodate:" />
+
+        <TextView
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:text="I confirm that the clinic location above adheres to the following requirements:" />
+
+
+        <CheckBox
+            android:id="@+id/checkBoxsturdy"
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:gravity="left|end"
+            android:text="There is a sturdy table with leg room. The location has no through traffic or is in a busy lab. It is a vibration and draught free environment, with a temperature range of 17°C to 25°C. I understand that I may be charged for any technician/clinic time lost due to these conditions not being met. " />
+
+
+        <TextView
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Are there any special conditions?" />
+
+        <TextView
+            android:id="@+id/textSpecialCondition"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_steps"
+            android:gravity="left"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="PARKING: Our technicians will have a lot of equipment to carry so a pre-booked parking space will be required. Please confirm the following parking arrangements:" />
+
+        <TextView
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:text="Please confirm the following parking arrangements:" />
+
+
+
+
+
+
+
+
+        <CheckBox
+            android:id="@+id/checkBoxParkingAvalOnSide"
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:gravity="left|end"
+            android:text="Parking available on-site and pre-booked if so, please provide details:" />
+
+        <TextView
+            android:id="@+id/textParkingAvalDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_steps"
+            android:gravity="left"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+
+
+        <CheckBox
+            android:id="@+id/checkBoxOutSideBuild"
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:gravity="left|end"
+            android:text="Equipment can be dropped off outside the building:" />
+
+
+        <CheckBox
+            android:id="@+id/checkBoxPayDisp"
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="Pay &amp; Display Cost of parking:  " />
+
+        <TextView
+            android:id="@+id/textPayDiaplay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_steps"
+            android:gravity="left"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+
+
+        <CheckBox
+            android:id="@+id/checkBoxOnSideParking"
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:gravity="left|end"
+            android:text="On-site parking is not available if so, please provide full details of nearest car park:" />
+
+        <TextView
+            android:id="@+id/textOnSideParking"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_steps"
+            android:gravity="left"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="ACCESS/ARRIVAL: What is the earliest time the Technicians can gain access to the clinic location?:" />
+
+
+        <TextView
+            android:id="@+id/textTechniciansGain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_steps"
+            android:gravity="left"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Will technicians need escorting around site or in/ out of lab?:" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:weightSum="2">
+
+            <RadioButton
+                android:id="@+id/rdTechArondSideYes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rdrdTechArondSideNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="No" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="If YES… can a pass be provided:" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:weightSum="2">
+
+            <RadioButton
+                android:id="@+id/rdPassProvdedYes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rdPassProvdedNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="No" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

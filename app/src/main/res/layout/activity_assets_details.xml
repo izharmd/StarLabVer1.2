@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.bws.starlab.Assets_Activity">
+
+    <include
+        android:id="@+id/container_header_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        layout="@layout/header_username_activity"
+       />
+
+    <include
+        android:id="@+id/container_header_lyt"
+        layout="@layout/header_activity"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.7"
+            android:orientation="vertical"
+            android:weightSum="20">
+
+            <LinearLayout
+                style="@style/LinearLayout_createjob"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    style="@style/Text_view"
+                    android:text="Equipment Id" />
+
+                <TextView
+                    android:id="@+id/textAssetseequipmentId"
+                    style="@style/Text_view1"
+                    android:text="qwretryt" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LinearLayout_createjob"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    style="@style/Text_view"
+                    android:text="Equipment Name" />
+
+                <TextView
+                    android:id="@+id/textAssetseequipmentName"
+                    style="@style/Text_view1"
+                    android:text="awtshdd" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LinearLayout_createjob"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    style="@style/Text_view"
+                    android:text="Equipment Model" />
+
+                <TextView
+                    android:id="@+id/textAssetsModel"
+                    style="@style/Text_view1"
+                    android:text="sdgh" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/LinearLayout_createjob"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    style="@style/Text_view"
+                    android:text="Equipment MFR" />
+
+                <TextView
+                    android:id="@+id/textAssetsMfr"
+                    style="@style/Text_view1"
+                    android:text="dfhdfhd" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LinearLayout_createjob"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    style="@style/Text_view"
+                    android:text="Description" />
+
+                <TextView
+                    android:id="@+id/textAssetsDescription"
+                    style="@style/Text_view1"
+                    android:text="fdhdhd" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/ic_button"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:visibility="gone"/>
+
+
+        </LinearLayout>
+
+        <include
+            layout="@layout/footer_activity"
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".3"
+            android:background="@color/color_orange_Bg"
+android:visibility="gone"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_theme_bg"
+
+    tools:context="com.bws.starlab.LoginActivity">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/textView_stnPromt"
+            android:text="Scheduling Tool"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <ImageView
+            style="@style/ImageView_stnPromt"
+            android:src="@mipmap/starlab_logo" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp" />
+
+        <LinearLayout
+            style="@style/linerLayout_stnPromt"
+            android:layout_marginTop="30dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="3dp"
+                android:layout_weight=".5"
+                android:src="@mipmap/ic_service_engineer" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                style="@style/SpinnerAsEditText"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_weight="5" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:background="@color/white"></View>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:layout_weight=".5"
+                android:src="@android:drawable/arrow_down_float" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/linerLayout_stnPromt"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="3dp"
+                android:layout_weight=".5"
+                android:src="@mipmap/ic_username" />
+
+            <EditText
+                android:id="@+id/editUserName"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:background="@null"
+                android:hint="Username"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:textCursorDrawable="@drawable/edittext_cursor_color" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/linerLayout_stnPromt"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="3dp"
+                android:layout_weight=".5"
+                android:src="@mipmap/ic_password" />
+
+            <EditText
+                android:id="@+id/editPassword"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:background="@null"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:textCursorDrawable="@drawable/edittext_cursor_color" />
+
+            <ImageView
+                android:id="@+id/imv_hidePassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight=".5"
+                android:src="@drawable/ic_pass_hide" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:buttonTint="@color/white"
+            android:text="Remember me"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textForgetPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/forgetpassword"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnExit"
+                style="@style/login_Button"
+                android:layout_marginRight="20dp"
+                android:text="Exit" />
+
+            <Button
+                android:id="@+id/btnSignIn"
+                style="@style/login_Button"
+                android:text="Sign in" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="280dp" />
+    </LinearLayout>
+
+</ScrollView>

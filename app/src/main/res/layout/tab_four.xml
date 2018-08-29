@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+
+        <CheckBox
+            android:id="@+id/checkBoxUSBmemory"
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="left|end"
+            android:enabled="false"
+            android:text="@string/step5" />
+
+        <CheckBox
+            android:id="@+id/checkBoxEmail"
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="left|end"
+            android:enabled="false"
+            android:text="Please tick if you would prefer your certificates to be emailed (max 50 pipettes):" />
+
+
+        <TextView
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Previous Clinic Comments" />
+
+
+        <TextView
+            android:id="@+id/textPrevClComment"
+            android:background="@drawable/round_steps"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorBlack"
+            android:paddingLeft="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            style="@style/Text_view_Steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Invoicing Requirements" />
+
+
+        <TextView
+            android:id="@+id/textInvoiceReqr"
+            android:background="@drawable/round_steps"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorBlack"
+            android:paddingLeft="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:layout_marginTop="0dp"
+    android:background="@color/white"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/stepHeader_bg"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:text="Service details"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    style="@style/ll_Steps"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:singleLine="true"
+                        android:text="Week Commencing:" />
+
+                    <TextView
+                        android:id="@+id/textWeekComm"
+                        style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:text="Service Level:" />
+
+                    <TextView
+                        android:id="@+id/textServiceLevel"
+                        style="@style/Text_view_Steps1" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_Steps">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:layout_weight="2"
+                        android:text="External clean:" />
+
+                    <RadioButton
+                        android:id="@+id/rdExYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/rdExNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Please specify any special requirements for the clinic" />
+
+                <TextView
+                    android:id="@+id/textSpecialReqr"
+                    android:background="@drawable/round_steps"
+                    android:gravity="left"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorBlack"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp" />
+
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Schedule available?" />
+
+                <TextView
+                    android:id="@+id/textScheduleAvail"
+                    style="@style/Text_view_Steps1"
+                    android:gravity="left"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Assign New Technician"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    style="@style/ll_Steps"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        style="@style/Text_view_Steps"
+                        android:paddingLeft="0dp"
+                        android:text="Technician Name:" />
+
+                    <TextView
+                        android:id="@+id/textTechnicianName"
+                        style="@style/Text_view_Steps1"
+                        android:gravity="center|left" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Assign Date Form:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textDateFrom"
+                        style="@style/Text_view_Steps1"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.3"
+                        android:gravity="center|left" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".4"
+                        android:paddingLeft="5dp"
+                        android:text="To:"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textdateTo"
+                        style="@style/Text_view_Steps1"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.3"
+                        android:gravity="center|left" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:weightSum="2">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxNeedCar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".7"
+                        android:button="@null"
+                        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                        android:paddingLeft="0dp"
+                        android:text="Need Car"
+                        android:textSize="16sp" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxOverNightStay"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:button="@null"
+                        android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                        android:paddingLeft="20dp"
+                        android:text="OverNight Stay"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_No_OverNightStay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:visibility="visible"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:text="Number of OverNight Stay:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textNumOverNightStay"
+                        style="@style/Text_view_Steps1"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center|left" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Text_view_Steps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="0dp"
+                    android:text="Comments:" />
+
+                <TextView
+                    android:id="@+id/textComments"
+                    android:background="@drawable/round_steps"
+                    android:gravity="left"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorBlack"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
