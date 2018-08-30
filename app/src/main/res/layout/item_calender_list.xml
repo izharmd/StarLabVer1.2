@@ -16,7 +16,7 @@
         android:paddingLeft="10dp"
         android:text="Thu 1 March"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView

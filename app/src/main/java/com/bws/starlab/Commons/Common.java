@@ -39,15 +39,15 @@ public class Common {
 
     public static String tipOneTips;
     public static String majorityPipettesServiced;
-    public static int single30;
-    public static int channel8;
-    public static int channel12;
-    public static int repeaters;
-    public static int bottleTops;
+    public static String single30;
+    public static String channel8;
+    public static String channel12;
+    public static String repeaters;
+    public static String bottleTops;
     public static boolean isOneYear;
     public static boolean isSixMonth;
     public static boolean isOther;
-    public static int other;
+    public static String other;
     public static String calibrationDueOtherDate;
 
 
@@ -121,6 +121,7 @@ public class Common {
     public static String destLong;
 
     public static ProgressDialog pDialog;
+    public static String calendarDate;
 
 
 

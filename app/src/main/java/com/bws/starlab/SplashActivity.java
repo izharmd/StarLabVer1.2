@@ -10,10 +10,13 @@ import android.widget.Toast;
 
 import com.bws.starlab.Commons.Common;
 import com.bws.starlab.Utils.DatabaseHelper;
+import com.bws.starlab.Utils.InternetConnection;
 import com.bws.starlab.Utils.PreferenceConnector;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class SplashActivity extends AppCompatActivity {
     private final int SPLASH_DISPLAY_LENGTH = 3000;
@@ -25,8 +28,8 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         String token = FirebaseInstanceId.getInstance().getToken();
-        Log.d("Token===",token);
-        Toast.makeText(SplashActivity.this,token,Toast.LENGTH_SHORT).show();
+      //  Log.d("Token===",token);
+//        Toast.makeText(SplashActivity.this,token,Toast.LENGTH_SHORT).show();
 
         populateDetails();
 
@@ -34,15 +37,29 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                if (userName != null) {
-                    Intent mainIntent = new Intent(SplashActivity.this, DashboardActivity.class);
-                    startActivity(mainIntent);
-                    finish();
+
+                if (InternetConnection.checkConnection(SplashActivity.this)) {
+                    if (userName != null) {
+                        Intent mainIntent = new Intent(SplashActivity.this, DashboardActivity.class);
+                        startActivity(mainIntent);
+                        finish();
+                    } else {
+                        Intent mainIntent = new Intent(SplashActivity.this, LoginActivity.class);
+                        startActivity(mainIntent);
+                        finish();
+                    }
                 } else {
-                    Intent mainIntent = new Intent(SplashActivity.this, LoginActivity.class);
-                    startActivity(mainIntent);
-                    finish();
+                    new SweetAlertDialog(SplashActivity.this, SweetAlertDialog.WARNING_TYPE)
+                            .setTitleText("Oops...")
+                            .setContentText("Please check your internet connection.")
+                            .show();
                 }
+
+
+
+
+
+
             }
         }, SPLASH_DISPLAY_LENGTH);
     }

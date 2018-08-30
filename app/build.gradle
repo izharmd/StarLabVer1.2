@@ -48,7 +48,7 @@ dependencies {
 
     compile 'com.applandeo:material-calendar-view:1.4.0'
     compile 'com.github.mmoamenn:ProgressWindow_Android:0.0.2'
-
+    compile 'com.victor:lib:1.0.4'
 }
 
 apply plugin: 'com.google.gms.google-services'

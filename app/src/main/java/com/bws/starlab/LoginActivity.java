@@ -54,6 +54,18 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
 
+import static android.os.Build.VERSION_CODES.FROYO;
+import static android.os.Build.VERSION_CODES.GINGERBREAD;
+import static android.os.Build.VERSION_CODES.HONEYCOMB;
+import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
+import static android.os.Build.VERSION_CODES.JELLY_BEAN;
+import static android.os.Build.VERSION_CODES.KITKAT;
+import static android.os.Build.VERSION_CODES.LOLLIPOP;
+import static android.os.Build.VERSION_CODES.N;
+import static android.os.Build.VERSION_CODES.O;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 public class LoginActivity extends AppCompatActivity {
 
     Button btnSignIn, btnExit;
@@ -81,12 +93,22 @@ public class LoginActivity extends AppCompatActivity {
 
     private static View systemUIView;
 
+    int currentVer = android.os.Build.VERSION.SDK_INT;
+    String devicePlatform;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Date date = new Date();
+        SimpleDateFormat  formatter = new SimpleDateFormat("dd-MMM-yyyy");
+        String strDate = formatter.format(date);
+        System.out.println("Date Format =================: "+strDate);
+
         intiView();
         clickEvent();
+
     }
 
     // Click event
@@ -226,6 +248,49 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        if( currentVer == FROYO ) {
+            String ver = String.valueOf(currentVer);
+            devicePlatform = "FROYO" +" "+ver;
+        }
+        else if ( currentVer == GINGERBREAD ) {
+            String ver = String.valueOf(currentVer);
+            devicePlatform = "GINGERBREAD" +" "+ver;
+        }
+        else if ( currentVer == HONEYCOMB ){
+            String ver = String.valueOf(currentVer);
+            devicePlatform = "HONEYCOMB" +" "+ver;
+
+        }else if(currentVer == ICE_CREAM_SANDWICH){
+            String ver = String.valueOf(currentVer);
+            devicePlatform = "ICE_CREAM_SANDWICH" +" "+ver;
+
+        }else if(currentVer == JELLY_BEAN){
+            String ver = String.valueOf(currentVer);
+            devicePlatform = "JELLY_BEAN" +" "+ver;
+
+        }else if(currentVer == KITKAT){
+            String ver = String.valueOf(currentVer);
+            devicePlatform = "KITKAT" +" "+ver;
+
+        }else if(currentVer == LOLLIPOP){
+
+            String ver = String.valueOf(currentVer);
+            devicePlatform = "LOLLIPOP" +" "+ver;
+
+        }else if(currentVer == N){
+            String ver = String.valueOf(currentVer);
+            devicePlatform = "N" +" "+ver;
+
+        }else if(currentVer == O){
+
+            String ver = String.valueOf(currentVer);
+            devicePlatform = "O" +" "+ver;
+
+        }else {
+            String ver = "27";
+            devicePlatform = "P" +""+ver;
+        }
+
     }
 
     //    call login API using AsyncHttpClient
@@ -233,6 +298,8 @@ public class LoginActivity extends AppCompatActivity {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("username", editUserName.getText().toString());
         jsonObject.put("password", editPassword.getText().toString());
+        jsonObject.put("DeviceID", FirebaseInstanceId.getInstance().getToken());
+        jsonObject.put("DevicePlatform", devicePlatform);
         invokeLogin(jsonObject);
     }
 

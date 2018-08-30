@@ -118,7 +118,7 @@ public class JobDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 fragment = new Tab_Two();
-                textJob_header.setText("Pippette");
+                textJob_header.setText("Pipette");
 
                 if (fragment != null) {
                     fragmentManager = getSupportFragmentManager();
@@ -398,12 +398,12 @@ public class JobDetailsActivity extends AppCompatActivity {
 
                                 Common.tipOneTips = jsonObject.getString("tipOneTips");
                                 Common.majorityPipettesServiced = jsonObject.getString("majorityPipettesServiced");
-                                Common.single30 = jsonObject.getInt("single30");
-                                Common.channel8 = jsonObject.getInt("channel8");
-                                Common.channel12 = jsonObject.getInt("channel12");
-                                Common.repeaters = jsonObject.getInt("repeaters");
-                                Common.bottleTops = jsonObject.getInt("bottleTops");
-                                Common.other = jsonObject.getInt("other");
+                                Common.single30 = jsonObject.getString("single30");
+                                Common.channel8 = jsonObject.getString("channel8");
+                                Common.channel12 = jsonObject.getString("channel12");
+                                Common.repeaters = jsonObject.getString("repeaters");
+                                Common.bottleTops = jsonObject.getString("bottleTops");
+                                Common.other = jsonObject.getString("other");
                                 Common.isOneYear = jsonObject.getBoolean("isOneYear");
                                 Common.isSixMonth = jsonObject.getBoolean("isSixMonth");
                                 Common.isOther = jsonObject.getBoolean("isOther");

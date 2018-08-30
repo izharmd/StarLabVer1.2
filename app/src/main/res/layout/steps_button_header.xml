@@ -18,7 +18,7 @@
         <Button
             android:id="@+id/btnTabPippeteDetails"
             style="@style/Button_Steps"
-            android:text="Pippette" />
+            android:text="Pipette" />
 
         <Button
             android:id="@+id/btnTabLocation"

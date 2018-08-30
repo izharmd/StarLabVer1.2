@@ -19,14 +19,34 @@ import com.bws.starlab.Utils.DatabaseHelper;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import org.json.JSONObject;
+
+import java.util.Map;
+
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private static final String TAG = "FCM Service";
 
     DatabaseHelper db = DatabaseHelper.getInstance(this);
-
+    String message;
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
+
+
+        String s = remoteMessage.getData().toString();
+        Log.d("dataChat",s);
+        try
+        {
+            Map<String, String> params = remoteMessage.getData();
+            JSONObject object = new JSONObject(params);
+            Log.e("JSON_OBJECT", object.toString());
+
+             message = object.getString("msg");
+            Log.d("message===",message);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
        // UserModel userModel = new UserModel();
        // db.insertUserDetils(userModel);
@@ -36,10 +56,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
         }*/
 
-        Log.d(TAG, "From: " + remoteMessage.getFrom());
+       /* Log.d(TAG, "From: " + remoteMessage.getFrom());
         Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().getBody());
         String message = remoteMessage.getNotification().getBody();
-
+*/
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         // Use for start notification activity if click on notification
@@ -55,7 +75,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 "New schedule maintenance at 4:30 p.m");*/
 
         NotificationCompat.Builder mBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_app_icon)
                 .setContentIntent(pendingIntent)
                 .setContentTitle("StarLab")
                 .setContentText(message);

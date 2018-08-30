@@ -68,12 +68,12 @@ public class Tab_Two extends Fragment {
 
         textTipOne.setText(Common.tipOneTips);
         textMejority.setText(Common.majorityPipettesServiced);
-        textSingl30.setText(String.valueOf(Common.single30));
-        textChannal8.setText(String.valueOf(Common.channel8));
-        textChannal12.setText(String.valueOf(Common.channel12));
-        textRepater.setText(String.valueOf(Common.repeaters));
-        textBottalTop.setText(String.valueOf(Common.bottleTops));
-        textOther.setText(String.valueOf(Common.other));
+        textSingl30.setText(Common.single30);
+        textChannal8.setText(Common.channel8);
+        textChannal12.setText(Common.channel12);
+        textRepater.setText(Common.repeaters);
+        textBottalTop.setText(Common.bottleTops);
+        textOther.setText(Common.other);
         textCalibrationDueDate.setText(Common.calibrationDueOtherDate);
     }
 }

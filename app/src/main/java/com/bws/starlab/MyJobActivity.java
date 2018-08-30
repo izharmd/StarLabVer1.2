@@ -147,6 +147,19 @@ public class MyJobActivity extends AppCompatActivity {
         invokeAllJob(jsonObject);
     }
 
+
+    //    call All Job API using AsyncHttpClient
+    private void calendarJob() throws JSONException, UnsupportedEncodingException {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("userid", PreferenceConnector.readString(this,"userid",""));
+        jsonObject.put("rolename", PreferenceConnector.readString(this,"rolename",""));
+        jsonObject.put("JobStatus", "DATEWISEJOB");
+        jsonObject.put("DATE_FILTER", "29-Aug-2018");
+        invokeAllJob(jsonObject);
+    }
+
+
+
     private void invokeAllJob(JSONObject jsonObject) throws UnsupportedEncodingException {
         StringEntity entity = new StringEntity(jsonObject.toString());
         client = new AsyncHttpClient();

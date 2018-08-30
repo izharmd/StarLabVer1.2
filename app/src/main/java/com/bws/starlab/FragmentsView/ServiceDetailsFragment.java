@@ -41,17 +41,19 @@ public class ServiceDetailsFragment extends Fragment {
         checkBoxOverNightStay = rootView.findViewById(R.id.checkBoxOverNightStay);
 
         if (Common.isNeedCar == 0) {
-            checkBoxNeedCar.setChecked(false);
+            //checkBoxNeedCar.setChecked(false);
+            checkBoxNeedCar.setEnabled(false);
         } else {
-            checkBoxNeedCar.setChecked(true);
-            checkBoxOverNightStay.setEnabled(false);
+            checkBoxNeedCar.setEnabled(true);
+            //checkBoxNeedCar.setChecked(true);
+            //checkBoxOverNightStay.setEnabled(false);
         }
 
         if (Common.isOverNightStay == 0) {
-            checkBoxOverNightStay.setChecked(false);
+            checkBoxOverNightStay.setEnabled(false);
             ll_No_OverNightStay.setVisibility(View.GONE);
         } else {
-            checkBoxOverNightStay.setChecked(true);
+            checkBoxOverNightStay.setEnabled(true);
             checkBoxNeedCar.setEnabled(false);
             ll_No_OverNightStay.setVisibility(View.VISIBLE);
         }
