@@ -11,6 +11,7 @@ import android.util.Log;
 import android.widget.RemoteViews;
 
 import com.bws.starlab.Commons.Common;
+import com.bws.starlab.DashboardActivity;
 import com.bws.starlab.LoginActivity;
 import com.bws.starlab.Models.UserModel;
 import com.bws.starlab.PushNotificationActivity;
@@ -63,7 +64,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         // Use for start notification activity if click on notification
-        Intent intent = new Intent(this, PushNotificationActivity.class);
+        Intent intent = new Intent(this, DashboardActivity.class);
         Intent intentArr[] = {intent};
         PendingIntent pendingIntent = PendingIntent.getActivities(this, 0, intentArr, 0);
 

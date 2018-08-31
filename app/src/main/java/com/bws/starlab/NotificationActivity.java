@@ -108,8 +108,8 @@ public class NotificationActivity extends AppCompatActivity {
 
     private void notificationAPI() throws JSONException, UnsupportedEncodingException {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("userid", PreferenceConnector.readString(this,"userid",""));
-        jsonObject.put("rolename", PreferenceConnector.readString(this,"rolename",""));
+        jsonObject.put("userid", PreferenceConnector.readString(this, "userid", ""));
+        jsonObject.put("rolename", PreferenceConnector.readString(this, "rolename", ""));
         invokenotificationAPI(jsonObject);
     }
 
