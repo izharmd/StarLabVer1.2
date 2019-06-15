@@ -18,7 +18,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.bws.starlab.Commons.Common;
+import com.bws.starlab.Models.JobDetailsModel;
 import com.bws.starlab.R;
 import com.bws.starlab.Utils.DataParser;
 import com.bws.starlab.Utils.GPSTracker;
@@ -35,7 +37,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
+
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,8 +64,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
     LocationRequest mLocationRequest;
     GPSTracker gps;
     LatLng currentLatLng;
+    LatLng canraZoom;
 
-    TextView textTimeEstimation;
+    TextView textLocation,textTimeEstimation;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_map, container, false);
@@ -70,8 +76,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         SupportMapFragment fragment = new SupportMapFragment();
         transaction.add(R.id.mapView, fragment);
         transaction.commit();
+//Added
+        textLocation = (TextView) rootView.findViewById(R.id.textLocation);
+        textTimeEstimation = (TextView) rootView.findViewById(R.id.textTimeEstimation);
 
-        textTimeEstimation = (TextView)rootView.findViewById(R.id.textTimeEstimation);
+        textLocation.setText(Common.location); //Added
 
         fragment.getMapAsync(this);
 
@@ -89,7 +98,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         }
         return rootView;
     }
-
+//Added 14-6-2019
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -101,8 +110,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
                 buildGoogleApiClient();
                 mMap.setMyLocationEnabled(true);
             }
-        }
-        else {
+        } else {
             buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
         }
@@ -118,36 +126,53 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
             gps.showSettingsAlert();
         }
         //Place current location marker
-      //  LatLng latLng = new LatLng(gps.getLatitude(), gps.getLongitude());
+        //  LatLng latLng = new LatLng(gps.getLatitude(), gps.getLongitude());
 
-        LatLng dest = new LatLng(Double.parseDouble(Common.destLat),
-                Double.parseDouble(Common.destLong));
+        //LatLng dest = new LatLng(Double.parseDouble(Common.destLat),
+        //       Double.parseDouble(Common.destLong));
 
-       // LatLng dest = new LatLng(22.5851,88.3468);
+        LatLng dest = new LatLng(22.5851, 88.3468);
 
-        String url = getUrl(currentLatLng, dest);
-        Log.d("onMapClick", url.toString());
-        FetchUrl FetchUrl = new FetchUrl();
+        // String url = getUrl(currentLatLng, dest);
+        // Log.d("onMapClick", url.toString());
+        //FetchUrl FetchUrl = new FetchUrl();
 
         // Start downloading json data from Google Directions API
-        FetchUrl.execute(url);
+        //FetchUrl.execute(url);
 
         //move map camera
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(currentLatLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(currentLatLng));
+        //mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
         Common.pDialog.dismiss();
 
-        mMap.addMarker(new MarkerOptions().position(new LatLng(gps.getLatitude(), gps.getLongitude())));
-/*
- mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(Common.sourceLat),
+        // Addeed 14-6-2019
+
+        String lat = Common.destLat;
+        Log.d("werty", lat);
+
+       /* if (lat != null) {
+            mMap.addMarker(new MarkerOptions().position(new LatLng(gps.getLatitude(), gps.getLongitude())));
+            mMap.addMarker(new MarkerOptions().position(new LatLng(22.5958, 88.2636)));
+
+        } else {*/
+        //  mMap.addMarker(new MarkerOptions().position(new LatLng(gps.getLatitude(), gps.getLongitude())));
+       try{
+        mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(Common.sourceLat),
                 Double.parseDouble(Common.sourceLong))).title("Current Position"));
-*/
 
         mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(Common.destLat),
                 Double.parseDouble(Common.destLong))));
 
+        canraZoom = new LatLng(Double.parseDouble(Common.sourceLat), Double.parseDouble(Common.sourceLong));
 
-       // mMap.addMarker(new MarkerOptions().position(new LatLng(22.5851,88.3468)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(canraZoom));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+        //  }
+
+       }catch (Exception ex){
+            ex.printStackTrace();
+       }
+
     }
 
     private String getUrl(LatLng origin, LatLng dest) {
@@ -235,7 +260,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
 
         }
     }
-     // A class to parse the Google Places in JSON format
+    // A class to parse the Google Places in JSON format
 
     private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>> {
 
@@ -248,25 +273,25 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
 
             try {
                 jObject = new JSONObject(jsonData[0]);
-                Log.d("ParserTask",jsonData[0].toString());
+                Log.d("ParserTask", jsonData[0].toString());
                 DataParser parser = new DataParser();
                 Log.d("ParserTask", parser.toString());
 
                 // Starts parsing data
                 routes = parser.parse(jObject);
-                Log.d("ParserTask","Executing routes");
-                Log.d("ParserTask",routes.toString());
+                Log.d("ParserTask", "Executing routes");
+                Log.d("ParserTask", routes.toString());
 
                 String distance = jObject.getJSONArray("routes").getJSONObject(0).getJSONArray("legs").getJSONObject(0).getJSONObject("distance").getString("text");
 
-                Log.d("distance======",distance);
+                Log.d("distance======", distance);
                 Common.timeEstimation = jObject.getJSONArray("routes").getJSONObject(0).getJSONArray("legs").getJSONObject(0).getJSONObject("duration").getString("text");
-                Log.d("duration",Common.timeEstimation);
+                Log.d("duration", Common.timeEstimation);
                 textTimeEstimation.setText(Common.timeEstimation);
 
 
             } catch (Exception e) {
-                Log.d("ParserTask",e.toString());
+                Log.d("ParserTask", e.toString());
                 e.printStackTrace();
             }
             return routes;
@@ -301,16 +326,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
                 lineOptions.width(5);
                 lineOptions.color(Color.RED);
 
-                Log.d("onPostExecute","onPostExecute lineoptions decoded");
+                Log.d("onPostExecute", "onPostExecute lineoptions decoded");
 
             }
 
             // Drawing polyline in the Google Map for the i-th route
-            if(lineOptions != null) {
+            if (lineOptions != null) {
                 mMap.addPolyline(lineOptions);
-            }
-            else {
-                Log.d("onPostExecute","without Polylines drawn");
+            } else {
+                Log.d("onPostExecute", "without Polylines drawn");
             }
         }
     }
@@ -353,7 +377,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
     }
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
-    public boolean checkLocationPermission(){
+
+    public boolean checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(getContext(),
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {

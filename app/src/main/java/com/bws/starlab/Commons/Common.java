@@ -8,9 +8,10 @@ import android.app.ProgressDialog;
 
 public class Common {
 
-   // public static String base_URL =  "http://veterinary-lims.co.uk/StarlabWebAPI/api/";
-    public static String base_URL =  "http://fieldservices.org.uk/STARLABWebAPI/api/";
 
+   // public static String base_URL =  "http://fieldservices.org.uk/STARLABWebAPI/api/";
+    public static String base_URL =  "http://fieldservices.org.uk/STARLABWebAPI-Test/api/";// LIVE
+    //public static String base_URL =  "http://fieldservices.org.uk/StarlabWebAPI-MobileTest/api/";
     public  static String userFristName ;
     public  static String userLastName ;
     public  static String workOrderNo ;
@@ -66,6 +67,9 @@ public class Common {
     public static String techniciansGainAccess;
     public static String isTechniciansAroundSite;
     public static String isPassProvided;
+    //Added 14-6-2015
+    public static String location;
+    public static String techsInLocationClinic;
 
     // For Certificate
 
@@ -96,6 +100,7 @@ public class Common {
 
     //For Customer
 
+   public static String orderNo; //Add
     public static String accountManager;
     public static String keyContact;
     public static String keyEmail ;

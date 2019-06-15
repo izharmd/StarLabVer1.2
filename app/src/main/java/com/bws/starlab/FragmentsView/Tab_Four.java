@@ -37,12 +37,12 @@ public class Tab_Four extends Fragment {
         textInvoiceReqr = (TextView)rootview.findViewById(R.id.textInvoiceReqr);
 
         if(Common.isUSBStick){
-            checkBoxUSBmemory.setChecked(true);
-            checkBoxUSBmemory.setEnabled(true);
+            checkBoxUSBmemory.setChecked(true); //Changeed
+            checkBoxUSBmemory.setEnabled(false);//Changed
         }
         if(Common.isCertificatesEmailed){
-            checkBoxEmail.setChecked(true);
-            checkBoxEmail.setEnabled(true);
+            checkBoxEmail.setChecked(true); //Changed
+            checkBoxEmail.setEnabled(false);//Changed
         }
         textPrevClComment.setText(Common.previousClinicComments);
         textInvoiceReqr.setText(Common.invoicingRequirements);

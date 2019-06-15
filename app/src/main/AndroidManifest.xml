@@ -36,6 +36,12 @@
             </intent-filter>
         </service>
 
+        <service android:name=".Firebase.FirebaseIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity android:name=".LoginActivity"/>
        <!-- android:theme="@style/Theme.AppCompat.Light"-->
         <activity android:name=".DashboardActivity" />

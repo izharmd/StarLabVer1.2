@@ -49,17 +49,17 @@ public class Tab_Two extends Fragment {
         checkBoxOther = (CheckBox)rootview.findViewById(R.id.checkBoxOther);
 
         if(Common.isOneYear){
-            checkBoxOneYr.setEnabled(true);
+            checkBoxOneYr.setEnabled(false);
             checkBoxOneYr.setChecked(true);
         }
 
         if(Common.isSixMonth){
-            checkBoxSixMonth.setEnabled(true);
+            checkBoxSixMonth.setEnabled(false);
             checkBoxSixMonth.setChecked(true);
         }
 
         if(Common.isOther){
-            checkBoxOther.setEnabled(true);
+            checkBoxOther.setEnabled(false);
             checkBoxOther.setChecked(true);
         }
         if(checkBoxOther.isChecked()){

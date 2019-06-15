@@ -41,6 +41,20 @@
             android:layout_marginTop="10dp"
             android:text="Each technician requires 2m of BENCH SPACE with leg room: How many techs will the above location accommodate:" />
 
+
+        <TextView
+            android:id="@+id/textEachTech"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+           android:layout_margin="5dp"
+            android:gravity="left|center"
+            android:paddingLeft="5dp"
+            android:text=""
+            android:background="@drawable/round_steps"
+            android:textColor="@color/colorBlack"/>
+
+
         <TextView
             style="@style/Text_view_Steps"
             android:layout_width="wrap_content"

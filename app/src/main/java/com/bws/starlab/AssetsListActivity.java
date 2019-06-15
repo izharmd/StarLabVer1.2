@@ -19,20 +19,29 @@ import com.bws.starlab.Models.AssetsListModel;
 import com.bws.starlab.Utils.DatabaseHelper;
 import com.bws.starlab.Utils.PreferenceConnector;
 import com.dgreenhalgh.android.simpleitemdecoration.linear.DividerItemDecoration;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
+import org.apache.http.entity.StringEntity;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class AssetsListActivity extends AppCompatActivity {
 
@@ -43,7 +52,8 @@ public class AssetsListActivity extends AppCompatActivity {
     DatabaseHelper db = DatabaseHelper.getInstance(this);
     AsyncHttpClient client;
     ProgressDialog pDialog;
-    public String assetsUrl = Common.base_URL + "Assets";
+    //public String assetsUrl = Common.base_URL + "Assets";
+    public String assetsUrl = Common.base_URL + "Assets/GetID";
     String asynchResult = "";
 
     @Override
@@ -89,7 +99,9 @@ public class AssetsListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         arrayAssetsList = new ArrayList<AssetsListModel>();
         try {
-            invokeAssets();
+            assets();
+        } catch (JSONException e) {
+            e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -166,4 +178,88 @@ public class AssetsListActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    //    call login API using AsyncHttpClient
+    private void assets() throws JSONException, UnsupportedEncodingException {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("UserID", "USR00000027");
+        invokeassets(jsonObject);
+    }
+
+    private void invokeassets(JSONObject jsonObject) throws UnsupportedEncodingException {
+        StringEntity entity = new StringEntity(jsonObject.toString());
+        client = new AsyncHttpClient();
+        client.setTimeout(30000);
+        client.post(this, assetsUrl, entity, "application/json", new JsonHttpResponseHandler() {
+
+            @Override
+            public void onStart() {
+                super.onStart();
+
+                pDialog.setMessage("Please wait...");
+                pDialog.show();
+                pDialog.setCancelable(false);
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                asynchResult = new String(String.valueOf(response));
+                String status, message;
+                if (asynchResult.isEmpty()) {
+                    pDialog.dismiss();
+                    new SweetAlertDialog(AssetsListActivity.this, SweetAlertDialog.WARNING_TYPE)
+                            .setTitleText("Oops...")
+                            .setContentText("Server not responding try again.")
+                            .show();
+                } else {
+                    try {
+                        JSONObject jsonObject1 = new JSONObject(asynchResult);
+                        status = jsonObject1.getString("status");
+                        message = jsonObject1.getString("message");
+                        if (status.equals("SUCCESS")) {
+                            JSONArray jsonArray = jsonObject1.getJSONArray("data");
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                AssetsListModel assetsListModel = new AssetsListModel();
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                assetsListModel.setEquipId(jsonObject.getInt("equipId"));
+                                assetsListModel.setEquipmentName(jsonObject.getString("equipmentName"));
+                                assetsListModel.setEquipModwl(jsonObject.getString("model"));
+                                assetsListModel.setEquipMrf(jsonObject.getString("mfr"));
+                                assetsListModel.setEquipDescription(jsonObject.getString("description"));
+                                arrayAssetsList.add(assetsListModel);
+                            }
+                            RecyclerView.ItemAnimator animator = recyclerView.getItemAnimator();
+                            if (animator instanceof SimpleItemAnimator) {
+                                ((SimpleItemAnimator) animator).setSupportsChangeAnimations(false);
+                            }
+                            //use for recycleview devider
+                            Drawable dividerDrawable = ContextCompat.getDrawable(AssetsListActivity.this, R.drawable.line_divider);
+                            recyclerView.addItemDecoration(new DividerItemDecoration(dividerDrawable));
+                            adapter = new AssetsListAdapter(arrayAssetsList);
+                            recyclerView.setAdapter(adapter);
+                        } else {
+                            pDialog.dismiss();
+                            new SweetAlertDialog(AssetsListActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                    .setTitleText("Oops...")
+                                    .setContentText(message)
+                                    .show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            @Override
+            public void onFinish() {
+                super.onFinish();
+                pDialog.dismiss();
+            }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                Log.d("Status code", String.valueOf(+statusCode));
+            }
+        });
+    }
+
 }

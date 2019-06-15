@@ -42,8 +42,16 @@ public class JobDetailsAdapter extends RecyclerView.Adapter<JobDetailsAdapter.Vi
         JobDetailsModel myList = list.get(position);
         holder.textCustomerName.setText("Company Name : " + myList.getCompanyName());
         holder.textDateTime.setText("Date : " + myList.getDate());
-        holder.textWorkNo.setText("Work No : " + myList.getWorkOrderNo());
+        holder.textWorkNo.setText("Work No : " + myList.getWorkOrderNoName());
         holder.textService.setText("Service : " + myList.getService());
+/*
+        String wkN = list.get(position).getWorkOrderNo();
+
+        if (wkN.equals("54")) {
+            holder.itemView.setBackgroundColor(Color.parseColor("#00ff00"));
+        } else {
+            holder.itemView.setBackgroundColor(Color.parseColor("#004f92"));
+        }*/
     }
 
     @Override
@@ -78,6 +86,7 @@ public class JobDetailsAdapter extends RecyclerView.Adapter<JobDetailsAdapter.Vi
                     Common.sourceLong = clickedDataItem.getSourceLong();
                     Common.destLat = clickedDataItem.getDestLat();
                     Common.destLong = clickedDataItem.getDestLong();
+                    Common.location = clickedDataItem.getAssignedArea();
                     Log.d("work no===",Common.workOrderNo);
                     Intent intent = new Intent(v.getContext(), JobDetailsActivity.class);
                     v.getContext().startActivity(intent);

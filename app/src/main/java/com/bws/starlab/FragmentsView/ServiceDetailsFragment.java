@@ -44,8 +44,8 @@ public class ServiceDetailsFragment extends Fragment {
             //checkBoxNeedCar.setChecked(false);
             checkBoxNeedCar.setEnabled(false);
         } else {
-            checkBoxNeedCar.setEnabled(true);
-            //checkBoxNeedCar.setChecked(true);
+            checkBoxNeedCar.setEnabled(false);
+            checkBoxNeedCar.setChecked(true);
             //checkBoxOverNightStay.setEnabled(false);
         }
 
@@ -53,7 +53,7 @@ public class ServiceDetailsFragment extends Fragment {
             checkBoxOverNightStay.setEnabled(false);
             ll_No_OverNightStay.setVisibility(View.GONE);
         } else {
-            checkBoxOverNightStay.setEnabled(true);
+            checkBoxOverNightStay.setChecked(true);
             checkBoxNeedCar.setEnabled(false);
             ll_No_OverNightStay.setVisibility(View.VISIBLE);
         }

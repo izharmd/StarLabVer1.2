@@ -51,7 +51,7 @@ public class TabOne extends Fragment {
         textAccountNo = (TextView) rootview.findViewById(R.id.textAccountNo);
         textPostCode = (TextView) rootview.findViewById(R.id.textPostCode);
 
-        textWorkOrderNo.setText(Common.workOrderNo);
+        textWorkOrderNo.setText(Common.orderNo);// Changed
         textAccountManager.setText(Common.accountManager);
         textMyContact.setText(Common.keyContact);
         textEmail.setText(Common.keyEmail);

@@ -84,12 +84,13 @@ public class LoginActivity extends AppCompatActivity {
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     AsyncHttpClient client;
+    String asynchResult = "";
     ProgressDialog pDialog;
     ProgressDialog PD;
     String strPram;
     public String loginUrl = Common.base_URL + "Registration/Get";
     public String frogetPassUrl = Common.base_URL + "ForgetPassword/Get";
-    String asynchResult = "";
+
 
     private static View systemUIView;
 

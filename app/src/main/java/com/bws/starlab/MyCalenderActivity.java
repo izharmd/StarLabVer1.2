@@ -66,10 +66,10 @@ public class MyCalenderActivity extends AppCompatActivity {
     int currentMonth = 0;
     AsyncHttpClient client;
     ProgressDialog pDialog;
-    public String mycaledarUrl = Common.base_URL + "Calender";
+   // public String mycaledarUrl = Common.base_URL + "Calender";
     public String calendarJobUrl = Common.base_URL + "JobDetails/Get";
     String asynchResult = "";
-    String calendarDate;
+    //String calendarDate;
     // Button btnAssetsDetails;
 
     private ProgressWindow progressWindow ;
@@ -260,11 +260,15 @@ public class MyCalenderActivity extends AppCompatActivity {
 
     //    call All Job API using AsyncHttpClient
     private void calendarJob() throws JSONException, UnsupportedEncodingException {
+
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        String date = format.format(Date.parse(Common.calendarDate));
+
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("userid", PreferenceConnector.readString(this,"userid",""));
         jsonObject.put("rolename", PreferenceConnector.readString(this,"rolename",""));
         jsonObject.put("JobStatus", "DATEWISEJOB");
-        jsonObject.put("DATE_FILTER", Common.calendarDate);
+        jsonObject.put("DATE_FILTER", date);
         invokecalendarJob(jsonObject);
     }
 
@@ -273,7 +277,7 @@ public class MyCalenderActivity extends AppCompatActivity {
     private void invokecalendarJob(JSONObject jsonObject) throws UnsupportedEncodingException {
         StringEntity entity = new StringEntity(jsonObject.toString());
         client = new AsyncHttpClient();
-        client.setTimeout(3000);
+        client.setTimeout(300000);
         client.post(this, calendarJobUrl, entity, "application/json", new JsonHttpResponseHandler() {
             @Override
             public void onStart() {

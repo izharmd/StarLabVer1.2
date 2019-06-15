@@ -2,8 +2,14 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -23,7 +29,8 @@
         <Button
             android:id="@+id/btnTabLocation"
             style="@style/Button_Steps"
-            android:text="Location " />
+            android:text="Clinic Details"
+            android:layout_weight="1.1"/>
 
         <Button
             android:id="@+id/btnTabCertificates"
@@ -34,6 +41,46 @@
 
 
     </LinearLayout>
+    <!--<HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+           android:layout_weight="1"
+            android:background="@drawable/ic_tab_yellow"
+            android:text="Customer"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/ic_tab_yellow"
+            android:text="Pipette"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/ic_tab_yellow"
+            android:text="Clinic Details"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/ic_tab_yellow"
+            android:text="Certificates"/>
+
+
+
+    </LinearLayout>-->
+    </HorizontalScrollView>
 
 
 </LinearLayout>

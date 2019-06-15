@@ -150,7 +150,7 @@ public class JobDetailsActivity extends AppCompatActivity {
 
                 fragment = new Tab_Three();
 
-                textJob_header.setText("Location");
+                textJob_header.setText("Clinic Details");
                 if (fragment != null) {
                     fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
@@ -351,14 +351,18 @@ public class JobDetailsActivity extends AppCompatActivity {
                         JSONObject jsonObject1 = new JSONObject(asynchResult);
                         status = jsonObject1.getString("status");
                         message = jsonObject1.getString("message");
-
+// NOTE - For WORK No "42" data coming from server only for 42 but, for others data is coming all so taking
+ //                       taking last of data plese dont confuse
                         if (status.equals("SUCCESS")) {
                             JSONArray jsonArray = jsonObject1.getJSONArray("data");
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                if(i == 1){
+                                    break; // A unlabeled break is enough. You don't need a labeled break here.
+                                }
 
-                                textWorkOrderNo.setText(jsonObject.getString("workOrderNo"));
-                                textAccountManager.setText(jsonObject.getString("accountManager"));
+                                textWorkOrderNo.setText(jsonObject.getString("orderNo"));// Changed
+                                textAccountManager.setText(jsonObject.getString("accountManagerName")); //Changed
                                 textMyContact.setText(jsonObject.getString("keyContact"));
                                 textEmail.setText(jsonObject.getString("keyEmail"));
                                 textKeyTelephone.setText(jsonObject.getString("keyTelephone"));
@@ -379,9 +383,10 @@ public class JobDetailsActivity extends AppCompatActivity {
                                 Common.CreatedBy = jsonObject.getString("createdBy");
                                 Common.RoleID = jsonObject.getString("roleID");
 
-                                // Service details
+                                // Service details In Web TAB
+                                // Sechedule In mobile TAB
                                 Common.weekCommencing = jsonObject.getString("weekCommencing");
-                                Common.serviceID = jsonObject.getString("serviceID");
+                                Common.serviceID = jsonObject.getString("serviceName");      // Changed
                                 Common.isExternalClean = jsonObject.getString("isExternalClean");
                                 Common.specialRequirementsClinic = jsonObject.getString("specialRequirementsClinic");
                                 Common.scheduleAvailable = jsonObject.getString("scheduleAvailable");
@@ -397,7 +402,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                                 // pippette
 
                                 Common.tipOneTips = jsonObject.getString("tipOneTips");
-                                Common.majorityPipettesServiced = jsonObject.getString("majorityPipettesServiced");
+                                Common.majorityPipettesServiced = jsonObject.getString("majorityPipettesServicedName");//Changed
                                 Common.single30 = jsonObject.getString("single30");
                                 Common.channel8 = jsonObject.getString("channel8");
                                 Common.channel12 = jsonObject.getString("channel12");
@@ -426,6 +431,8 @@ public class JobDetailsActivity extends AppCompatActivity {
                                 Common.techniciansGainAccess = jsonObject.getString("techniciansGainAccess");
                                 Common.isTechniciansAroundSite = jsonObject.getString("isTechniciansAroundSite");
                                 Common.isPassProvided = jsonObject.getString("isPassProvided");
+
+                                Common.techsInLocationClinic = jsonObject.getString("techsInLocationClinic");
 
 
                                 // Certificate
@@ -456,7 +463,8 @@ public class JobDetailsActivity extends AppCompatActivity {
 
                                 // For Customer
 
-                                Common.accountManager = (jsonObject.getString("accountManager"));
+                                Common.orderNo = (jsonObject.getString("orderNo"));//Add
+                                Common.accountManager = (jsonObject.getString("accountManagerName"));//Changed
                                 Common.keyContact = (jsonObject.getString("keyContact"));
                                 Common.keyEmail = (jsonObject.getString("keyEmail"));
                                 Common.keyTelephone = (jsonObject.getString("keyTelephone"));

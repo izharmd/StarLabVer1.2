@@ -28,8 +28,9 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         String token = FirebaseInstanceId.getInstance().getToken();
-      //  Log.d("Token===",token);
-//        Toast.makeText(SplashActivity.this,token,Toast.LENGTH_SHORT).show();
+       // Log.d("DTOKEN====",token);
+
+        // Toast.makeText(SplashActivity.this,token,Toast.LENGTH_SHORT).show();
 
         populateDetails();
 

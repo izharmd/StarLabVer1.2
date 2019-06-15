@@ -15,6 +15,30 @@ public class JobDetailsModel {
     String sourceLong;
     String destLat;
     String destLong;
+    String workOrderNoName;
+
+    // Added
+    String assignedArea;
+
+    public String getAssignedArea() {
+        return assignedArea;
+    }
+
+    public void setAssignedArea(String assignedArea) {
+        this.assignedArea = assignedArea;
+    }
+
+
+
+    public String getWorkOrderNoName() {
+        return workOrderNoName;
+    }
+
+    public void setWorkOrderNoName(String workOrderNoName) {
+        this.workOrderNoName = workOrderNoName;
+    }
+
+
 
     public String getSourceLat() {
         return sourceLat;

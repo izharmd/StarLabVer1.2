@@ -23,9 +23,9 @@
                 android:text="Location" />
 
             <TextView
-                android:id="@+id/textName"
+                android:id="@+id/textLocation"
                 style="@style/Text_view1"
-                android:text="" />
+                android:text="sgsdgsdg" />
 
         </LinearLayout>
 

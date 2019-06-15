@@ -15,7 +15,7 @@ public class Tab_Three extends Fragment  {
     View rootView;
 
 
-    TextView textLocationClinic,textSpecialCondition,textParkingAvalDetails,textPayDiaplay,
+    TextView textLocationClinic,textSpecialCondition,textEachTech,textParkingAvalDetails,textPayDiaplay,
             textOnSideParking,textTechniciansGain;
     CheckBox checkBoxsturdy,checkBoxParkingAvalOnSide,checkBoxOutSideBuild,checkBoxPayDisp,
             checkBoxOnSideParking;
@@ -38,6 +38,7 @@ public class Tab_Three extends Fragment  {
     private void initview() {
         textLocationClinic = (TextView)rootView.findViewById(R.id.textLocationClinic);
         textSpecialCondition = (TextView)rootView.findViewById(R.id.textSpecialCondition);
+        textEachTech = (TextView)rootView.findViewById(R.id.textEachTech);//Added
         textParkingAvalDetails = (TextView)rootView.findViewById(R.id.textParkingAvalDetails);
         textPayDiaplay = (TextView)rootView.findViewById(R.id.textPayDiaplay);
         textOnSideParking = (TextView)rootView.findViewById(R.id.textOnSideParking);
@@ -51,12 +52,13 @@ public class Tab_Three extends Fragment  {
         textPayDiaplay.setText(Common.parkingCost);
         textOnSideParking.setText(Common.nearestCarParkDetails);
         textTechniciansGain.setText(Common.techniciansGainAccess);
+        textEachTech.setText(Common.techsInLocationClinic);//Added
 
 
         checkBoxsturdy = (CheckBox)rootView.findViewById(R.id.checkBoxsturdy);
 
         if(Common.isSturdyTable == true){
-            checkBoxsturdy.setEnabled(true);
+            checkBoxsturdy.setEnabled(false);
             checkBoxsturdy.setChecked(true);
         }else {
             checkBoxsturdy.setEnabled(false);
@@ -65,7 +67,7 @@ public class Tab_Three extends Fragment  {
 
         checkBoxParkingAvalOnSide = (CheckBox)rootView.findViewById(R.id.checkBoxParkingAvalOnSide);
         if(Common.isOnSiteParkingAvailable == true){
-            checkBoxParkingAvalOnSide.setEnabled(true);
+            checkBoxParkingAvalOnSide.setEnabled(false);
             checkBoxParkingAvalOnSide.setChecked(true);
         }else {
             checkBoxParkingAvalOnSide.setEnabled(false);
@@ -75,7 +77,7 @@ public class Tab_Three extends Fragment  {
 
         checkBoxOutSideBuild = (CheckBox)rootView.findViewById(R.id.checkBoxOutSideBuild);
         if(Common.isOutsideBuilding == true){
-            checkBoxOutSideBuild.setEnabled(true);
+            checkBoxOutSideBuild.setEnabled(false);
             checkBoxOutSideBuild.setChecked(true);
         }else {
             checkBoxOutSideBuild.setEnabled(false);
@@ -85,7 +87,7 @@ public class Tab_Three extends Fragment  {
         checkBoxPayDisp = (CheckBox)rootView.findViewById(R.id.checkBoxPayDisp);
 
         if(Common.isPayAndDisplay == true){
-            checkBoxPayDisp.setEnabled(true);
+            checkBoxPayDisp.setEnabled(false);
             checkBoxPayDisp.setChecked(true);
         }else {
             checkBoxPayDisp.setEnabled(false);
@@ -94,7 +96,7 @@ public class Tab_Three extends Fragment  {
 
         checkBoxOnSideParking = (CheckBox)rootView.findViewById(R.id.checkBoxOnSideParking);
         if(Common.isOnSiitePreBooked == true){
-            checkBoxOnSideParking.setEnabled(true);
+            checkBoxOnSideParking.setEnabled(false);
             checkBoxOnSideParking.setChecked(true);
         }else {
             checkBoxOnSideParking.setEnabled(false);
@@ -110,8 +112,9 @@ public class Tab_Three extends Fragment  {
             rdTechArondSideYes.setChecked(true);
             rdrdTechArondSideNo.setEnabled(false);
         } else {
-            rdTechArondSideYes.setEnabled(false);
+
             rdrdTechArondSideNo.setChecked(true);
+            rdTechArondSideYes.setEnabled(false);
         }
 
 
@@ -120,12 +123,10 @@ public class Tab_Three extends Fragment  {
             rdPassProvdedYes.setChecked(true);
             rdPassProvdedNo.setEnabled(false);
         } else {
-            rdPassProvdedYes.setEnabled(false);
+
             rdPassProvdedNo.setChecked(true);
+            rdPassProvdedYes.setEnabled(false);
         }
-
-
-
 
     }
 }
