@@ -26,7 +26,7 @@ import com.bluehomestudio.progresswindow.ProgressWindowConfiguration;
 import com.bws.starlab.Adapter.CalenderAdapter;
 import com.bws.starlab.Commons.Common;
 import com.bws.starlab.Models.CalenderModel;
-import com.bws.starlab.Utils.DatabaseHelper;
+//import com.bws.starlab.Utils.DatabaseHelper;
 import com.bws.starlab.Utils.PreferenceConnector;
 import com.dgreenhalgh.android.simpleitemdecoration.linear.DividerItemDecoration;
 import com.loopj.android.http.AsyncHttpClient;
@@ -61,7 +61,7 @@ public class MyCalenderActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     ImageView imv_calenderPrev, imv_calenderNext;
 
-    DatabaseHelper db = DatabaseHelper.getInstance(this);
+   // DatabaseHelper db = DatabaseHelper.getInstance(this);
     int year;
     int currentMonth = 0;
     AsyncHttpClient client;
@@ -390,7 +390,8 @@ public class MyCalenderActivity extends AppCompatActivity {
         findViewById(R.id.imv_Shutdown).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db.deleteAllUserDtails();
+                //db.deleteAllUserDtails();
+                PreferenceConnector.writeString(MyCalenderActivity.this,"ISLOGIN","");
                 Intent i = new Intent(MyCalenderActivity.this, LoginActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);

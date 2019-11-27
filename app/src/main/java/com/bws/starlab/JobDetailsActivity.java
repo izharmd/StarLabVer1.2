@@ -2,6 +2,9 @@ package com.bws.starlab;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -22,8 +25,10 @@ import com.bws.starlab.FragmentsView.Tab_Four;
 import com.bws.starlab.FragmentsView.Tab_Three;
 import com.bws.starlab.FragmentsView.Tab_Two;
 import com.bws.starlab.FragmentsView.UpdatereportFragment;
-import com.bws.starlab.Utils.DatabaseHelper;
+//import com.bws.starlab.Utils.DatabaseHelper;
 import com.bws.starlab.Utils.PreferenceConnector;
+
+import com.google.android.gms.maps.model.LatLng;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -33,7 +38,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -49,11 +61,13 @@ public class JobDetailsActivity extends AppCompatActivity {
             textLabMobile, textAccountNo, textPostCode, textJob_header, textFullName;
     ImageView imv_viewMap, imv_Home, imv_UpdateReport, imv_ViewSchedule;
 
-    DatabaseHelper db = DatabaseHelper.getInstance(this);
+   // DatabaseHelper db = DatabaseHelper.getInstance(this);
     AsyncHttpClient client;
     ProgressDialog pDialog;
     public String customerDetailUrl = Common.base_URL + "JobDetails/GetID";
     String asynchResult = "";
+    LatLng origin;
+    LatLng  destination;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +75,77 @@ public class JobDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_job_details);
         initView();
         clickEvent();
+
+       getLatLongFromZipCode();
+
+        /*  origin = new LatLng(Double.parseDouble(Common.sourceLat), Double.parseDouble(Common.sourceLong));
+         destination = new LatLng(Double.parseDouble(Common.destLat), Double.parseDouble(Common.destLong));
+
+
+
+        GeoApiContext geoApiContext = new GeoApiContext.Builder()
+                .apiKey("AIzaSyDFVOM4ifkX8zm9l237F4S4iXAJaKTcato")
+                .build();
+
+        // - Perform the actual request
+        DirectionsResult directionsResult = null;
+        try {
+            directionsResult = DirectionsApi.newRequest(geoApiContext)
+                    .mode(TravelMode.DRIVING)
+                    .origin(origin)
+                    .destination(destination)
+                    .await();
+        } catch (ApiException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // - Parse the result
+        DirectionsRoute route = directionsResult.routes[0];
+        DirectionsLeg leg = route.legs[0];
+        Duration duration = leg.duration;*/
+
+
+    }
+
+    private void getLatLongFromZipCode() {
+
+        try {
+            Location location1 = new Location("");
+            location1.setLatitude(Double.parseDouble(Common.sourceLat));
+            location1.setLongitude(Double.parseDouble(Common.sourceLong));
+
+            Location location2 = new Location("");
+            location2.setLatitude(Double.parseDouble(Common.destLat));
+            location2.setLongitude(Double.parseDouble(Common.destLong));
+
+            int distanceInKm = (int) location1.distanceTo(location2) / 1000;
+
+            double miles = distanceInKm / 1.6;
+            String strMiles = Double.toString(miles);
+
+           /* int totalMin = 0;
+            int hours = 0;
+            int minutes = 0;
+
+            if (distanceInKm >= 40) {
+                int totalHrs = (int) distanceInKm / 40;// 40 km per hours
+
+                totalMin = totalHrs * 60;
+                hours = (int) totalMin / 60; //since both are ints, you get an int
+                minutes = (int) totalMin % 60;
+            } else {
+                totalMin = distanceInKm * 100 / 40;
+                hours = (int) totalMin / 60; //since both are ints, you get an int
+                minutes = (int) totalMin % 60;
+            }*/
+            Common.estimatedDriveTimeInMinutes = strMiles + " Miles";
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void clickEvent() {
@@ -69,7 +154,8 @@ public class JobDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                db.deleteAllUserDtails();
+                //db.deleteAllUserDtails();
+                PreferenceConnector.writeString(JobDetailsActivity.this,"ISLOGIN","");
                 Intent i = new Intent(JobDetailsActivity.this, LoginActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
@@ -249,6 +335,7 @@ public class JobDetailsActivity extends AppCompatActivity {
                     imv_UpdateReport.setEnabled(true);
                     imv_ViewSchedule.setEnabled(true);
                     textJob_header.setText("View Map");
+                    Common.pDialog.dismiss();
                 } else {
                     Toast.makeText(JobDetailsActivity.this, "Error in creating fragment", Toast.LENGTH_SHORT).show();
                 }
@@ -415,7 +502,7 @@ public class JobDetailsActivity extends AppCompatActivity {
 
                                 Common.calibrationDueOtherDate = jsonObject.getString("calibrationDueOtherDate");
 
-                                //Location
+                                //Location // Clinic Details
 
 
                                 Common.clinicLocation = jsonObject.getString("clinicLocation");

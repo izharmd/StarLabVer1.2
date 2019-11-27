@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.bws.starlab.Adapter.AssetsListAdapter;
 import com.bws.starlab.Commons.Common;
 import com.bws.starlab.Models.AssetsListModel;
-import com.bws.starlab.Utils.DatabaseHelper;
+//import com.bws.starlab.Utils.DatabaseHelper;
 import com.bws.starlab.Utils.PreferenceConnector;
 import com.dgreenhalgh.android.simpleitemdecoration.linear.DividerItemDecoration;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -49,7 +49,7 @@ public class AssetsListActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerView;
     TextView textJob_header,textFullName;
-    DatabaseHelper db = DatabaseHelper.getInstance(this);
+    //DatabaseHelper db = DatabaseHelper.getInstance(this);
     AsyncHttpClient client;
     ProgressDialog pDialog;
     //public String assetsUrl = Common.base_URL + "Assets";
@@ -69,7 +69,8 @@ public class AssetsListActivity extends AppCompatActivity {
         findViewById(R.id.imv_Shutdown).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db.deleteAllUserDtails();
+                //db.deleteAllUserDtails();
+                PreferenceConnector.writeString(AssetsListActivity.this,"ISLOGIN","");
                 Intent i = new Intent(AssetsListActivity.this, LoginActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
@@ -183,7 +184,8 @@ public class AssetsListActivity extends AppCompatActivity {
     //    call login API using AsyncHttpClient
     private void assets() throws JSONException, UnsupportedEncodingException {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("UserID", "USR00000027");
+       // jsonObject.put("UserID", "USR00000027");
+        jsonObject.put("UserID", PreferenceConnector.readString(AssetsListActivity.this,"userid",""));
         invokeassets(jsonObject);
     }
 

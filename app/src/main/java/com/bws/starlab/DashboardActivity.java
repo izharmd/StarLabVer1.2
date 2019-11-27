@@ -8,14 +8,26 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.bws.starlab.Utils.DatabaseHelper;
+
+import com.bws.starlab.Commons.Common;
+//import com.bws.starlab.Utils.DatabaseHelper;
 import com.bws.starlab.Utils.PreferenceConnector;
+import com.google.android.gms.maps.model.LatLng;
+
+
+import java.io.IOException;
+
+import static android.provider.Contacts.SettingsColumns.KEY;
 
 public class DashboardActivity extends AppCompatActivity {
     LinearLayout ll_MyJob,ll_assets,ll_notification,ll_MyAccount,ll_mycalender;
     ImageView imv_Shutdown;
     TextView textFullName;
-    DatabaseHelper db = DatabaseHelper.getInstance(this);
+   // DatabaseHelper db = DatabaseHelper.getInstance(this);
+
+    LatLng origin;
+    LatLng destination;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +35,45 @@ public class DashboardActivity extends AppCompatActivity {
 
         inintView();
         clicevent();
+
+
+
+        origin = new LatLng(22.24353,88.3456789);
+        destination = new LatLng(22.23456,88.2345678);
+
+
+
+       /* GeoApiContext geoApiContext = new GeoApiContext.Builder()
+                .apiKey("AIzaSyDFVOM4ifkX8zm9l237F4S4iXAJaKTcato")
+                .build();
+
+        // - Perform the actual request
+        DirectionsResult directionsResult = null;
+
+        try {
+            directionsResult = DirectionsApi.newRequest(geoApiContext)
+                    .mode(TravelMode.DRIVING)
+                    .origin(String.valueOf(origin))
+                    .destination(String.valueOf(destination))
+                    .await();
+        } catch (ApiException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        // - Parse the result
+        DirectionsRoute route = directionsResult.routes[0];
+        DirectionsLeg leg = route.legs[0];
+        Duration duration = leg.duration;*/
     }
+
+
+
+
 
     private void clicevent() {
 
@@ -61,8 +111,8 @@ public class DashboardActivity extends AppCompatActivity {
         findViewById(R.id.imv_Shutdown).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db.deleteAllUserDtails();
-                Intent i = new Intent(DashboardActivity.this, LoginActivity.class);
+                PreferenceConnector.writeString(DashboardActivity.this,"ISLOGIN","");
+               Intent i = new Intent(DashboardActivity.this, LoginActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
             }

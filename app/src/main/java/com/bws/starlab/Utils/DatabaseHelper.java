@@ -1,3 +1,4 @@
+/*
 package com.bws.starlab.Utils;
 
 import android.content.ContentValues;
@@ -242,3 +243,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return dataSaved;
     }
 }
+*/

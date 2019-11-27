@@ -37,7 +37,7 @@ public class UpdatereportFragment extends Fragment {
             editPepptThree, editPepptfour, editPepptLabOne, editPepptLabTwo, editPepptLabThree,
             editPepptLabFour, editComment, editRecomendation, editSimilar;
 
-    RadioButton rdYes, rdNo;
+    RadioButton rdYes, rdNo,rdCantSay;
     Button btnSaveReport;
 
     AsyncHttpClient client;
@@ -66,6 +66,7 @@ public class UpdatereportFragment extends Fragment {
 
                 rdYes.setChecked(true);
                 rdNo.setChecked(false);
+                rdCantSay.setChecked(false);
                 customerHappy = "Y";
 
             }
@@ -77,7 +78,20 @@ public class UpdatereportFragment extends Fragment {
 
                 rdNo.setChecked(true);
                 rdYes.setChecked(false);
+                rdCantSay.setChecked(false);
                 customerHappy = "N";
+
+            }
+        });
+
+        rdCantSay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                rdNo.setChecked(false);
+                rdYes.setChecked(false);
+                rdCantSay.setChecked(true);
+                customerHappy = "C";
 
             }
         });
@@ -166,8 +180,10 @@ public class UpdatereportFragment extends Fragment {
 
                                 if (customerHappy.equals("Y")) {
                                     rdYes.setChecked(true);
-                                } else {
+                                }else if(customerHappy.equals("N")){
                                     rdNo.setChecked(true);
+                                } else {
+                                    rdCantSay.setChecked(true);
                                 }
 
                             }
@@ -313,6 +329,7 @@ public class UpdatereportFragment extends Fragment {
 
         rdYes = (RadioButton) rootView.findViewById(R.id.rdYes);
         rdNo = (RadioButton) rootView.findViewById(R.id.rdNo);
+        rdCantSay = (RadioButton) rootView.findViewById(R.id.rdCantSay);
 
         btnSaveReport = (Button) rootView.findViewById(R.id.btnSaveReport);
 

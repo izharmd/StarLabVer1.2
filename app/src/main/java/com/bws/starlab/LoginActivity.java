@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 import com.bws.starlab.Commons.Common;
 import com.bws.starlab.Models.UserModel;
-import com.bws.starlab.Utils.DatabaseHelper;
+
 import com.bws.starlab.Utils.InternetConnection;
 import com.bws.starlab.Utils.PreferenceConnector;
 import com.gitonway.lee.niftymodaldialogeffects.lib.Effectstype;
@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
     NiftyDialogBuilder animatedDialogExit;
     private int passwordNotVisible = 1;
 
-    DatabaseHelper db = DatabaseHelper.getInstance(LoginActivity.this);
+    //DatabaseHelper db = DatabaseHelper.getInstance(LoginActivity.this);
 
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
@@ -109,6 +109,9 @@ public class LoginActivity extends AppCompatActivity {
 
         intiView();
         clickEvent();
+
+       // String dtoken = FirebaseInstanceId.getInstance().getToken();
+       // Log.d("TOKEN===",dtoken);
 
     }
 
@@ -302,6 +305,8 @@ public class LoginActivity extends AppCompatActivity {
         jsonObject.put("DeviceID", FirebaseInstanceId.getInstance().getToken());
         jsonObject.put("DevicePlatform", devicePlatform);
         invokeLogin(jsonObject);
+
+
     }
 
     private void invokeLogin(JSONObject jsonObject) throws UnsupportedEncodingException {
@@ -332,9 +337,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 } else {
 //    Save user details in local database
-                    if (rememberMe == true) {
-                        saveUserDetails();
-                    }
+
                     try {
                         JSONObject jsonObject1 = new JSONObject(asynchResult);
                         status = jsonObject1.getString("status");
@@ -351,6 +354,13 @@ public class LoginActivity extends AppCompatActivity {
                                 Common.userLastName = jsonObject.getString("fname");
 
 //   Save user name in sharepreference
+
+                                if (rememberMe == true) {
+                                    //saveUserDetails();
+
+                                    PreferenceConnector.writeString(LoginActivity.this,"ISLOGIN","ISLOGIN");
+                                }
+
                                 PreferenceConnector.writeString(LoginActivity.this, "fullName", jsonObject.getString("fullname"));
 
                                 Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
@@ -440,7 +450,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void intiView() {
-        db = DatabaseHelper.getInstance(this);
+        //db = DatabaseHelper.getInstance(this);
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
         btnExit = (Button) findViewById(R.id.btnExit);
         editUserName = (EditText) findViewById(R.id.editUserName);
@@ -463,10 +473,10 @@ public class LoginActivity extends AppCompatActivity {
         userModel.setUserName(editUserName.getText().toString());
         userModel.setPassword(editPassword.getText().toString());
 
-        if (db.insertUserDetils(userModel)) {
+       /* if (db.insertUserDetils(userModel)) {
             //Toast.makeText(LoginActivity.this, "Successfully save", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Data not Saved", Toast.LENGTH_SHORT).show();
-        }
+        }*/
     }
 }

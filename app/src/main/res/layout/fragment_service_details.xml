@@ -45,7 +45,7 @@
                     <TextView
                         style="@style/Text_view_Steps"
                         android:singleLine="true"
-                        android:text="Week Commencing:" />
+                        android:text="Month Commencing:" />
 
                     <TextView
                         android:id="@+id/textWeekComm"
@@ -63,24 +63,43 @@
                         style="@style/Text_view_Steps1" />
                 </LinearLayout>
 
-                <LinearLayout style="@style/ll_Steps">
+                <LinearLayout
+                    style="@style/ll_Steps"
+                    android:weightSum="2">
 
                     <TextView
                         style="@style/Text_view_Steps"
-                        android:layout_weight="2"
+                        android:layout_weight=".8"
                         android:text="External clean:" />
 
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
                     <RadioButton
                         android:id="@+id/rdExYes"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
                         android:id="@+id/rdExNo"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="No" />
+                    <RadioButton
+                        android:id="@+id/rdBoth"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.3"
+                        android:layout_height="wrap_content"
+                        android:text="Both" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
                 <TextView

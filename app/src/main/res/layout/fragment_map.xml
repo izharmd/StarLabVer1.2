@@ -35,7 +35,7 @@
 
             <TextView
                 style="@style/Text_view"
-                android:text="Estimated time" />
+                android:text="Distance" />
 
             <TextView
                 android:id="@+id/textTimeEstimation"

@@ -9,9 +9,8 @@ import android.app.ProgressDialog;
 public class Common {
 
 
-   // public static String base_URL =  "http://fieldservices.org.uk/STARLABWebAPI/api/";
-    public static String base_URL =  "http://fieldservices.org.uk/STARLABWebAPI-Test/api/";// LIVE
-    //public static String base_URL =  "http://fieldservices.org.uk/StarlabWebAPI-MobileTest/api/";
+    public static String base_URL =  "http://fieldservices.org.uk/STARLABWebAPI/api/";//LIVE
+   // public static String base_URL =  "http://fieldservices.org.uk/StarlabWebAPI-MobileTest/api/";// TEST
     public  static String userFristName ;
     public  static String userLastName ;
     public  static String workOrderNo ;
@@ -127,6 +126,8 @@ public class Common {
 
     public static ProgressDialog pDialog;
     public static String calendarDate;
+
+    public static String estimatedDriveTimeInMinutes;
 
 
 

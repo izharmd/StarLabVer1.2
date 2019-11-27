@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.bws.starlab.Adapter.JobDetailsAdapter;
 import com.bws.starlab.Commons.Common;
 import com.bws.starlab.Models.JobDetailsModel;
-import com.bws.starlab.Utils.DatabaseHelper;
+//import com.bws.starlab.Utils.DatabaseHelper;
 import com.bws.starlab.Utils.InternetConnection;
 import com.bws.starlab.Utils.PreferenceConnector;
 import com.dgreenhalgh.android.simpleitemdecoration.linear.DividerItemDecoration;
@@ -45,7 +45,7 @@ public class MyJobActivity extends AppCompatActivity {
     Button btnToday, btnAll;
     List<JobDetailsModel> arrayPrioriryJob;
     private RecyclerView.Adapter adapter;
-    DatabaseHelper db = DatabaseHelper.getInstance(this);
+   // DatabaseHelper db = DatabaseHelper.getInstance(this);
     AsyncHttpClient client;
     ProgressDialog pDialog;
     String asynchResult = "";
@@ -67,7 +67,8 @@ public class MyJobActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                db.deleteAllUserDtails();
+                //db.deleteAllUserDtails();
+                PreferenceConnector.writeString(MyJobActivity.this,"ISLOGIN","");
                 Intent i = new Intent(MyJobActivity.this, LoginActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
@@ -145,11 +146,8 @@ public class MyJobActivity extends AppCompatActivity {
         jsonObject.put("rolename", PreferenceConnector.readString(this,"rolename",""));
         jsonObject.put("JobStatus", JobDetails);
         invokeAllJob(jsonObject);
+
     }
-
-
-
-
 
     private void invokeAllJob(JSONObject jsonObject) throws UnsupportedEncodingException {
         StringEntity entity = new StringEntity(jsonObject.toString());

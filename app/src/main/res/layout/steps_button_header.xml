@@ -6,10 +6,7 @@
     android:orientation="vertical">
 
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -24,7 +21,8 @@
         <Button
             android:id="@+id/btnTabPippeteDetails"
             style="@style/Button_Steps"
-            android:text="Pipette" />
+            android:text="Pipette"
+            android:layout_weight=".9"/>
 
         <Button
             android:id="@+id/btnTabLocation"
@@ -80,7 +78,7 @@
 
 
     </LinearLayout>-->
-    </HorizontalScrollView>
+
 
 
 </LinearLayout>

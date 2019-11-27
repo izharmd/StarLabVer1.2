@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.bws.starlab.Utils.DatabaseHelper;
+//import com.bws.starlab.Utils.DatabaseHelper;
 import com.bws.starlab.Utils.PreferenceConnector;
 
 public class AssetsDetailsActivity extends AppCompatActivity {
@@ -15,7 +15,7 @@ public class AssetsDetailsActivity extends AppCompatActivity {
     TextView textAssetseequipmentId, textAssetseequipmentName, textAssetsModel,
             textAssetsMfr, textAssetsDescription,textFullName;
     Button btnSubmit;
-    DatabaseHelper db = DatabaseHelper.getInstance(this);
+    //DatabaseHelper db = DatabaseHelper.getInstance(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,8 @@ public class AssetsDetailsActivity extends AppCompatActivity {
         findViewById(R.id.imv_Shutdown).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db.deleteAllUserDtails();
+                //db.deleteAllUserDtails();
+                PreferenceConnector.writeString(AssetsDetailsActivity.this,"ISLOGIN","");
                 Intent i = new Intent(AssetsDetailsActivity.this, LoginActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);

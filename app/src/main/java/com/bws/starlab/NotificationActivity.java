@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.bws.starlab.Adapter.NotificationAdapter;
 import com.bws.starlab.Commons.Common;
 import com.bws.starlab.Models.NotificationModel;
-import com.bws.starlab.Utils.DatabaseHelper;
+//import com.bws.starlab.Utils.DatabaseHelper;
 import com.bws.starlab.Utils.InternetConnection;
 import com.bws.starlab.Utils.PreferenceConnector;
 import com.dgreenhalgh.android.simpleitemdecoration.linear.DividerItemDecoration;
@@ -40,7 +40,7 @@ public class NotificationActivity extends AppCompatActivity {
     List<NotificationModel> arrayNotificationList;
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerView;
-    DatabaseHelper db = DatabaseHelper.getInstance(this);
+   // DatabaseHelper db = DatabaseHelper.getInstance(this);
     AsyncHttpClient client;
     ProgressDialog pDialog;
     String asynchResult = "";
@@ -90,7 +90,8 @@ public class NotificationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                db.deleteAllUserDtails();
+                //db.deleteAllUserDtails();
+                PreferenceConnector.writeString(NotificationActivity.this,"ISLOGIN","");
                 Intent i = new Intent(NotificationActivity.this, LoginActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);

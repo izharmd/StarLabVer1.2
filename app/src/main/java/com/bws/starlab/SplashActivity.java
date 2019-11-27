@@ -9,7 +9,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.bws.starlab.Commons.Common;
-import com.bws.starlab.Utils.DatabaseHelper;
+//import com.bws.starlab.Utils.DatabaseHelper;
 import com.bws.starlab.Utils.InternetConnection;
 import com.bws.starlab.Utils.PreferenceConnector;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -32,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
 
         // Toast.makeText(SplashActivity.this,token,Toast.LENGTH_SHORT).show();
 
-        populateDetails();
+        //populateDetails();
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -40,12 +40,15 @@ public class SplashActivity extends AppCompatActivity {
 
 
                 if (InternetConnection.checkConnection(SplashActivity.this)) {
-                    if (userName != null) {
-                        Intent mainIntent = new Intent(SplashActivity.this, DashboardActivity.class);
+
+                  String ISLOGIN =   PreferenceConnector.readString(SplashActivity.this,"ISLOGIN","");
+
+                    if (ISLOGIN.equals("")) {
+                        Intent mainIntent = new Intent(SplashActivity.this, LoginActivity.class);
                         startActivity(mainIntent);
                         finish();
                     } else {
-                        Intent mainIntent = new Intent(SplashActivity.this, LoginActivity.class);
+                        Intent mainIntent = new Intent(SplashActivity.this, DashboardActivity.class);
                         startActivity(mainIntent);
                         finish();
                     }
@@ -65,7 +68,7 @@ public class SplashActivity extends AppCompatActivity {
         }, SPLASH_DISPLAY_LENGTH);
     }
 
-    //To populate the details
+   /* //To populate the details
     public void populateDetails() {
         DatabaseHelper dbHelper = DatabaseHelper.getInstance(this);
         Cursor cursor = dbHelper.GetUser();
@@ -76,5 +79,5 @@ public class SplashActivity extends AppCompatActivity {
             } while (cursor.moveToNext());
         }
         cursor.close();
-    }
+    }*/
 }

@@ -23,7 +23,7 @@ public class ServiceDetailsFragment extends Fragment {
     View rootView;
 
     CheckBox checkBoxNeedCar, checkBoxOverNightStay;
-    RadioButton rdExYes, rdExNo;
+    RadioButton rdExYes, rdExNo,rdBoth;
     LinearLayout ll_No_OverNightStay;
     TextView textWeekComm, textServiceLevel, textSpecialReqr, textScheduleAvail, textDateFrom,
             textTechnicianName, textNumOverNightStay, textdateTo, textComments;
@@ -59,13 +59,20 @@ public class ServiceDetailsFragment extends Fragment {
         }
         rdExYes = (RadioButton) rootView.findViewById(R.id.rdExYes);
         rdExNo = (RadioButton) rootView.findViewById(R.id.rdExNo);
+        rdBoth = (RadioButton) rootView.findViewById(R.id.rdBoth);
 
         if (Common.isExternalClean.equals("Y")) {
             rdExYes.setChecked(true);
             rdExNo.setEnabled(false);
-        } else {
+            rdBoth.setEnabled(false);
+        } else if(Common.isExternalClean.equals("N")){
             rdExYes.setEnabled(false);
             rdExNo.setChecked(true);
+            rdBoth.setEnabled(false);
+        }else {
+            rdExYes.setEnabled(false);
+            rdExNo.setEnabled(false);
+            rdBoth.setChecked(true);
         }
 
         textWeekComm = (TextView) rootView.findViewById(R.id.textWeekComm);

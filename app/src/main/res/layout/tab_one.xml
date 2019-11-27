@@ -223,7 +223,7 @@
 
             <LinearLayout
                 style="@style/ll_Steps"
-                android:layout_height="120dp">
+                >
 
                 <TextView
                     style="@style/Text_view_Steps"
@@ -233,7 +233,7 @@
                     android:id="@+id/textAddress"
                     style="@style/Text_view_Steps1"
                     android:gravity="left"
-                    android:layout_height="120dp" />
+                    />
             </LinearLayout>
 
 

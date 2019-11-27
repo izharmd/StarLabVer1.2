@@ -1,3 +1,4 @@
+/*
 package com.bws.starlab.Utils;
 
 import android.app.Application;
@@ -42,3 +43,4 @@ public class AppController extends Application {
     }
 
 }
+*/

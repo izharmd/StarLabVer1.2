@@ -5,13 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import com.bws.starlab.Utils.DatabaseHelper;
+//import com.bws.starlab.Utils.DatabaseHelper;
 import com.bws.starlab.Utils.PreferenceConnector;
 
 public class NotificationDetailsActivity extends AppCompatActivity {
     TextView textNotificationBody;
     TextView textJob_header,textFullName;
-    DatabaseHelper db = DatabaseHelper.getInstance(this);
+   // DatabaseHelper db = DatabaseHelper.getInstance(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +26,8 @@ public class NotificationDetailsActivity extends AppCompatActivity {
         findViewById(R.id.imv_Shutdown).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db.deleteAllUserDtails();
+               // db.deleteAllUserDtails();
+                PreferenceConnector.writeString(NotificationDetailsActivity.this,"ISLOGIN","");
                 Intent i = new Intent(NotificationDetailsActivity.this, LoginActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);

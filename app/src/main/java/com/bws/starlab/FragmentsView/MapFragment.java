@@ -1,3 +1,4 @@
+
 package com.bws.starlab.FragmentsView;
 
 import android.Manifest;
@@ -80,6 +81,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         textLocation = (TextView) rootView.findViewById(R.id.textLocation);
         textTimeEstimation = (TextView) rootView.findViewById(R.id.textTimeEstimation);
 
+
+
+
+        textTimeEstimation.setText(Common.estimatedDriveTimeInMinutes);
+
         textLocation.setText(Common.location); //Added
 
         fragment.getMapAsync(this);
@@ -129,33 +135,34 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         //  LatLng latLng = new LatLng(gps.getLatitude(), gps.getLongitude());
 
         //LatLng dest = new LatLng(Double.parseDouble(Common.destLat),
-        //       Double.parseDouble(Common.destLong));
+             //  Double.parseDouble(Common.destLong));
 
-        LatLng dest = new LatLng(22.5851, 88.3468);
 
-        // String url = getUrl(currentLatLng, dest);
+/*LatLng dest = new LatLng(22.5851, 88.3468);
+         String url = getUrl(currentLatLng, dest);
         // Log.d("onMapClick", url.toString());
-        //FetchUrl FetchUrl = new FetchUrl();
-
+        FetchUrl FetchUrl = new FetchUrl();
         // Start downloading json data from Google Directions API
-        //FetchUrl.execute(url);
+        FetchUrl.execute(url);*//*
 
-        //move map camera
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng(currentLatLng));
-        //mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+
+
         Common.pDialog.dismiss();
 
-        // Addeed 14-6-2019
+
 
         String lat = Common.destLat;
         Log.d("werty", lat);
 
-       /* if (lat != null) {
+       */
+/* if (lat != null) {
             mMap.addMarker(new MarkerOptions().position(new LatLng(gps.getLatitude(), gps.getLongitude())));
             mMap.addMarker(new MarkerOptions().position(new LatLng(22.5958, 88.2636)));
 
-        } else {*/
-        //  mMap.addMarker(new MarkerOptions().position(new LatLng(gps.getLatitude(), gps.getLongitude())));
+        } else {
+            //  mMap.addMarker(new MarkerOptions().position(new LatLng(gps.getLatitude(), gps.getLongitude())));
+*/
+
        try{
         mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(Common.sourceLat),
                 Double.parseDouble(Common.sourceLong))).title("Current Position"));
@@ -165,9 +172,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
 
         canraZoom = new LatLng(Double.parseDouble(Common.sourceLat), Double.parseDouble(Common.sourceLong));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(canraZoom));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+       // mMap.moveCamera(CameraUpdateFactory.newLatLng(canraZoom));
+           LatLng ll = new LatLng(22.5958,88.2636);
+
+           mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(canraZoom, 12));
+        //mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
         //  }
+
 
        }catch (Exception ex){
             ex.printStackTrace();
@@ -182,8 +193,17 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         String str_dest = "destination=" + dest.latitude + "," + dest.longitude;
         // Sensor enabled
         String sensor = "sensor=false";
+
+
+        String mode = "mode=driving";
+        String key = "AIzaSyAEVSUOK79XGlGCyqBfSEdqSaiJi-W3yAw";
         // Building the parameters to the web service
-        String parameters = str_origin + "&" + str_dest + "&" + sensor;
+        String parameters = str_origin + "&" + str_dest + "&" + sensor + "&" + mode + "&" + key;
+
+        Log.d("URL====",parameters);
+
+        // Building the parameters to the web service
+       // String parameters = str_origin + "&" + str_dest + "&" + sensor;
         // Output format
         String output = "json";
         // Building the url to the web service
@@ -284,10 +304,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
 
                 String distance = jObject.getJSONArray("routes").getJSONObject(0).getJSONArray("legs").getJSONObject(0).getJSONObject("distance").getString("text");
 
-                Log.d("distance======", distance);
+
                 Common.timeEstimation = jObject.getJSONArray("routes").getJSONObject(0).getJSONArray("legs").getJSONObject(0).getJSONObject("duration").getString("text");
+
+                //textTimeEstimation.setText(Common.timeEstimation);
+                Log.d("distance======", distance);
                 Log.d("duration", Common.timeEstimation);
-                textTimeEstimation.setText(Common.timeEstimation);
 
 
             } catch (Exception e) {
