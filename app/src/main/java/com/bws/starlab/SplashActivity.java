@@ -1,20 +1,16 @@
 package com.bws.starlab;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.bws.starlab.Commons.Common;
 //import com.bws.starlab.Utils.DatabaseHelper;
 import com.bws.starlab.Utils.InternetConnection;
 import com.bws.starlab.Utils.PreferenceConnector;
 import com.google.firebase.iid.FirebaseInstanceId;
-
-import java.util.ArrayList;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -27,12 +23,6 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        String token = FirebaseInstanceId.getInstance().getToken();
-       // Log.d("DTOKEN====",token);
-
-        // Toast.makeText(SplashActivity.this,token,Toast.LENGTH_SHORT).show();
-
-        //populateDetails();
 
         new Handler().postDelayed(new Runnable() {
             @Override

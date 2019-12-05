@@ -16,6 +16,7 @@ public class Common {
     public  static String workOrderNo ;
     public  static String CreatedBy ;
     public  static String RoleID ;
+    public  static String token ;
     public  static int notificationCount ;
 
     public static String timeEstimation;

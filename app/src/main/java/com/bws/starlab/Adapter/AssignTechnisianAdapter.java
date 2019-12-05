@@ -1,19 +1,15 @@
 package com.bws.starlab.Adapter;
 
-import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.bws.starlab.Commons.Common;
-import com.bws.starlab.JobDetailsActivity;
 import com.bws.starlab.Models.JobDetailsModel;
 import com.bws.starlab.R;
 

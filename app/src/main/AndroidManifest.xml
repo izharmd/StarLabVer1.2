@@ -28,6 +28,14 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDFVOM4ifkX8zm9l237F4S4iXAJaKTcato" />
 
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon"
+
+            android:resource="@drawable/appicon" />
+
+        <meta-data
+            android:name="com.google.firebandroid.permission.SYSTEM_ALERT_WINDOWase.messaging.default_notification_channel_id"
+            android:value="fetchh-channel"/>
+
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,18 +43,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--FOR PUSH NOTIFICATIONS bws.projects@gmail.com-->
 
-        <service android:name=".Firebase.MyFirebaseMessagingService">
+        <service
+            android:name=".Firebase.MyFirebaseMessagingService"
+            android:stopWithTask="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <service android:name=".Firebase.FirebaseIDService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-            </intent-filter>
-        </service>
+
 
         <activity android:name=".LoginActivity"/>
        <!-- android:theme="@style/Theme.AppCompat.Light"-->

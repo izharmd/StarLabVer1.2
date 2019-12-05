@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "169279130578",
-    "firebase_url": "https://starlab-2493b.firebaseio.com",
-    "project_id": "starlab-2493b",
-    "storage_bucket": "starlab-2493b.appspot.com"
+    "project_number": "924858104164",
+    "firebase_url": "https://star-labs-1544812287441.firebaseio.com",
+    "project_id": "star-labs-1544812287441",
+    "storage_bucket": "star-labs-1544812287441.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:169279130578:android:210b9c59bd5b21b3",
+        "mobilesdk_app_id": "1:924858104164:android:7dd9f7ae722bd00ea92271",
         "android_client_info": {
           "package_name": "com.bws.starlab"
         }
       },
       "oauth_client": [
         {
-          "client_id": "169279130578-j6mio5ba13m49cba70ub606i78767rhp.apps.googleusercontent.com",
+          "client_id": "924858104164-6n9icqrq3li7tkpu6quq76taq1iqhe20.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCvSDAEYmipDAFSpmz3ONzSxU0TNj2CIvs"
+          "current_key": "AIzaSyCsnrYoyju2BsQls-CVJBcID_LbvxCesOc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "169279130578-j6mio5ba13m49cba70ub606i78767rhp.apps.googleusercontent.com",
+              "client_id": "924858104164-6n9icqrq3li7tkpu6quq76taq1iqhe20.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

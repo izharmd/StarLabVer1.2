@@ -1,22 +1,18 @@
 package com.bws.starlab;
 
 import android.content.Intent;
-import android.location.Address;
-import android.location.Geocoder;
-import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bws.starlab.Commons.Common;
 import com.bws.starlab.Models.UserModel;
@@ -35,9 +31,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import okhttp3.Call;
@@ -63,9 +56,10 @@ import static android.os.Build.VERSION_CODES.KITKAT;
 import static android.os.Build.VERSION_CODES.LOLLIPOP;
 import static android.os.Build.VERSION_CODES.N;
 import static android.os.Build.VERSION_CODES.O;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
+
 public class LoginActivity extends AppCompatActivity {
 
     Button btnSignIn, btnExit;
@@ -96,22 +90,19 @@ public class LoginActivity extends AppCompatActivity {
 
     int currentVer = android.os.Build.VERSION.SDK_INT;
     String devicePlatform;
+    String diviceToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Date date = new Date();
-        SimpleDateFormat  formatter = new SimpleDateFormat("dd-MMM-yyyy");
-        String strDate = formatter.format(date);
-        System.out.println("Date Format =================: "+strDate);
+        diviceToken = PreferenceConnector.readString(LoginActivity.this, "TOKEN", "");
+        Log.d("DTOKEN====", diviceToken);
+
 
         intiView();
         clickEvent();
-
-       // String dtoken = FirebaseInstanceId.getInstance().getToken();
-       // Log.d("TOKEN===",dtoken);
 
     }
 
@@ -252,47 +243,45 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        if( currentVer == FROYO ) {
+        if (currentVer == FROYO) {
             String ver = String.valueOf(currentVer);
-            devicePlatform = "FROYO" +" "+ver;
-        }
-        else if ( currentVer == GINGERBREAD ) {
+            devicePlatform = "FROYO" + " " + ver;
+        } else if (currentVer == GINGERBREAD) {
             String ver = String.valueOf(currentVer);
-            devicePlatform = "GINGERBREAD" +" "+ver;
-        }
-        else if ( currentVer == HONEYCOMB ){
+            devicePlatform = "GINGERBREAD" + " " + ver;
+        } else if (currentVer == HONEYCOMB) {
             String ver = String.valueOf(currentVer);
-            devicePlatform = "HONEYCOMB" +" "+ver;
+            devicePlatform = "HONEYCOMB" + " " + ver;
 
-        }else if(currentVer == ICE_CREAM_SANDWICH){
+        } else if (currentVer == ICE_CREAM_SANDWICH) {
             String ver = String.valueOf(currentVer);
-            devicePlatform = "ICE_CREAM_SANDWICH" +" "+ver;
+            devicePlatform = "ICE_CREAM_SANDWICH" + " " + ver;
 
-        }else if(currentVer == JELLY_BEAN){
+        } else if (currentVer == JELLY_BEAN) {
             String ver = String.valueOf(currentVer);
-            devicePlatform = "JELLY_BEAN" +" "+ver;
+            devicePlatform = "JELLY_BEAN" + " " + ver;
 
-        }else if(currentVer == KITKAT){
+        } else if (currentVer == KITKAT) {
             String ver = String.valueOf(currentVer);
-            devicePlatform = "KITKAT" +" "+ver;
+            devicePlatform = "KITKAT" + " " + ver;
 
-        }else if(currentVer == LOLLIPOP){
+        } else if (currentVer == LOLLIPOP) {
 
             String ver = String.valueOf(currentVer);
-            devicePlatform = "LOLLIPOP" +" "+ver;
+            devicePlatform = "LOLLIPOP" + " " + ver;
 
-        }else if(currentVer == N){
+        } else if (currentVer == N) {
             String ver = String.valueOf(currentVer);
-            devicePlatform = "N" +" "+ver;
+            devicePlatform = "N" + " " + ver;
 
-        }else if(currentVer == O){
+        } else if (currentVer == O) {
 
             String ver = String.valueOf(currentVer);
-            devicePlatform = "O" +" "+ver;
+            devicePlatform = "O" + " " + ver;
 
-        }else {
+        } else {
             String ver = "27";
-            devicePlatform = "P" +""+ver;
+            devicePlatform = "P" + "" + ver;
         }
 
     }
@@ -302,7 +291,7 @@ public class LoginActivity extends AppCompatActivity {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("username", editUserName.getText().toString());
         jsonObject.put("password", editPassword.getText().toString());
-        jsonObject.put("DeviceID", FirebaseInstanceId.getInstance().getToken());
+        jsonObject.put("DeviceID", diviceToken);
         jsonObject.put("DevicePlatform", devicePlatform);
         invokeLogin(jsonObject);
 
@@ -358,7 +347,7 @@ public class LoginActivity extends AppCompatActivity {
                                 if (rememberMe == true) {
                                     //saveUserDetails();
 
-                                    PreferenceConnector.writeString(LoginActivity.this,"ISLOGIN","ISLOGIN");
+                                    PreferenceConnector.writeString(LoginActivity.this, "ISLOGIN", "ISLOGIN");
                                 }
 
                                 PreferenceConnector.writeString(LoginActivity.this, "fullName", jsonObject.getString("fullname"));

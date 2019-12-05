@@ -1,23 +1,16 @@
 package com.bws.starlab;
-import android.content.ComponentName;
 import android.content.Intent;
-import android.support.v4.content.IntentCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.content.IntentCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bws.starlab.Commons.Common;
 //import com.bws.starlab.Utils.DatabaseHelper;
 import com.bws.starlab.Utils.PreferenceConnector;
 import com.google.android.gms.maps.model.LatLng;
-
-
-import java.io.IOException;
-
-import static android.provider.Contacts.SettingsColumns.KEY;
 
 public class DashboardActivity extends AppCompatActivity {
     LinearLayout ll_MyJob,ll_assets,ll_notification,ll_MyAccount,ll_mycalender;
